@@ -9,23 +9,37 @@ const SearchResult = () => {
   }
 
   if (error) {
-    return <div className="text-center content-center">Search Term Not found.</div>;
+    return (
+      <div className="text-center content-center">Search Term Not found.</div>
+    );
   }
 
+  console.log(movies);
+  const baseUrl = "https://image.tmdb.org/t/p/w500";
 
   return (
-    <div className=" grid grid-cols-5 gap-4 place-items-center">
-      {movies.map((item, index) => (
+    <div className=" grid 2xl:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 place-items-center">
+      {movies.map((item) => (
         <div
-          key={index}
-          className="cursor-pointer border-2 border-yellow-400 flex justify-center items-center flex-col p-2"
+          key={item.id}
+          className="lg:max-h-[18rem] sm:scale-100 scale-90 max-h-[15rem] h-full cursor-pointer border-2 border-yellow-400 gap-2 flex justify-center items-center flex-col p-2"
         >
           <figure className=" overflow-hidden">
-            <img src={item.Poster} alt={item.Poster} className="h-52 w-52 hover:scale-110 transition-all " />
+            <img
+              src={`${baseUrl}${item.poster_path}`}
+              alt={`${baseUrl}${item.original_title}`}
+              className="h-52 lg:w-52 sm:max-w-none max-w-40  hover:scale-110 transition-all "
+            />
           </figure>
-          <div>
-            <p className="max-w-52 text-center font-medium">{item.Title}</p>
-            <p className="max-w-52 text-center">Type: {item.Type}</p>
+
+          <p className="max-w-52 text-center font-medium lg:text-lg md:text-md sm:text-sm leading-3">
+            {item.original_title}
+          </p>
+          <div className="flex justify-between  w-full">
+            <span className="max-w-52 text-center text-sm"> {item.Type}</span>
+            <span className="text-gray-400 text-sm">
+              {item.release_date.split("-")[1]}
+            </span>
           </div>
         </div>
       ))}

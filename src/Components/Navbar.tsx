@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate();
   return (
-    <nav className="px-6 py-4 fixed top-0 w-full max-w-[1740px]">
+    <nav className="px-6 py-4 fixed top-0 w-full max-w-[1740px] bg-black z-50">
       <div className="flex justify-between  items-center">
         <figure className="">
           <Link

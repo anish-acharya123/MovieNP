@@ -13,14 +13,31 @@ const initialState: initialState = {
   error: undefined,
 };
 
-const key = "641e1680";
-const URL = "https://www.omdbapi.com";
+interface searchParams {
+  query?: string;
+  sortBy?: string;
+}
+
+// https://api.themoviedb.org/3/discover/movie?api_key=d315b6608d6c57f8ac20bbcb9164bdcc&sort_by=popularity.desc
+const key: string = "d315b6608d6c57f8ac20bbcb9164bdcc";
+const baseUrl: string = "https://api.themoviedb.org/3";
 
 export const SearchMovies = createAsyncThunk(
   "movies/searchMovie",
-  async (query: string) => {
-    const response = await axios.get(`${URL}/?apikey=${key}&s=${query}`);
-    return response.data.Search;
+  async ({ query = "", sortBy = "popularity.desc" }: searchParams) => {
+    let url;
+
+    if (query) {
+      url = `${baseUrl}/search/movie?api_key=${key}&query=${encodeURIComponent(
+        query
+      )}`;
+    } else {
+      url = `${baseUrl}/discover/movie?api_key=${key}&sort_by=${sortBy}`;
+    }
+
+    console.log(url);
+    const response = await axios.get(url);
+    return response.data.results;
   }
 );
 
