@@ -14,7 +14,7 @@ const SearchBox = () => {
 
   const handleSubmit = () => {
     if (search) {
-      dispatch(SearchMovies({ query: search }));
+      dispatch(SearchMovies({ query: search, page: 1 }));
     }
   };
   return (

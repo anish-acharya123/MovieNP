@@ -1,25 +1,31 @@
+import { useEffect } from "react";
 import { useAppSelector } from "../apps/Store";
-const SearchResult = () => {
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../apps/Store";
+import { SearchMovies } from "../features/MovieSearchSlice";
+
+const MovieResult = ({ searchmovies }) => {
+  const dispatch = useDispatch<AppDispatch>();
   const { movies, loading, error } = useAppSelector(
     (state) => state.movieSearch
   );
 
-  if (loading) {
-    return <div className="text-center content-center">Loading....</div>;
+  let movie;
+  if (searchmovies) {
+    movie = searchmovies;
+  } else {
+    useEffect(() => {
+      dispatch(SearchMovies());
+    });
+    movie = movies;
   }
 
-  if (error) {
-    return (
-      <div className="text-center content-center">Search Term Not found.</div>
-    );
-  }
 
-  console.log(movies);
   const baseUrl = "https://image.tmdb.org/t/p/w500";
 
   return (
     <div className=" grid 2xl:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 place-items-center">
-      {movies.map((item) => (
+      {movie?.map((item) => (
         <div
           key={item.id}
           className="lg:max-h-[18rem] sm:scale-100 scale-90 max-h-[15rem] h-full cursor-pointer border-2 border-yellow-400 gap-2 flex justify-center items-center flex-col p-2"
@@ -47,4 +53,4 @@ const SearchResult = () => {
   );
 };
 
-export default SearchResult;
+export default MovieResult;

@@ -1,9 +1,9 @@
-import SearchResult from "./SearchResult";
+import MovieResult from "./MovieResult";
 
 const Movies = () => {
   return (
     <div>
-      <SearchResult />
+      <MovieResult searchmovies={undefined} />
     </div>
   );
 };

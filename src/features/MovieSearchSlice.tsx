@@ -13,29 +13,29 @@ const initialState: initialState = {
   error: undefined,
 };
 
-interface searchParams {
+interface fetchParams {
   query?: string;
   sortBy?: string;
+  letter?: string;
+  page: number;
 }
 
-// https://api.themoviedb.org/3/discover/movie?api_key=d315b6608d6c57f8ac20bbcb9164bdcc&sort_by=popularity.desc
-const key: string = "d315b6608d6c57f8ac20bbcb9164bdcc";
-const baseUrl: string = "https://api.themoviedb.org/3";
+const apiKey = "d315b6608d6c57f8ac20bbcb9164bdcc";
+const baseUrl = "https://api.themoviedb.org/3";
 
 export const SearchMovies = createAsyncThunk(
-  "movies/searchMovie",
-  async ({ query = "", sortBy = "popularity.desc" }: searchParams) => {
-    let url;
+  "movies/fetchMovies",
+  async ({ query = "", page = 1 }: fetchParams) => {
+    let url = "";
 
-    if (query) {
-      url = `${baseUrl}/search/movie?api_key=${key}&query=${encodeURIComponent(
+    if (query.length > 0) {
+      url = `${baseUrl}/search/movie?api_key=${apiKey}&query=${encodeURIComponent(
         query
-      )}`;
+      )}&page=${page}`;
     } else {
-      url = `${baseUrl}/discover/movie?api_key=${key}&sort_by=${sortBy}`;
+      url = `${baseUrl}/discover/movie?api_key=${apiKey}&sort_by=release_date.desc&page=${page}`;
     }
 
-    console.log(url);
     const response = await axios.get(url);
     return response.data.results;
   }
