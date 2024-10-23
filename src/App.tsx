@@ -4,7 +4,7 @@ import "./App.css";
 import Layout from "./Hoc/Layout";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Landingpage from "./pages/Landingpage";
+import Landingpage from "./Pages/Landingpage";
 
 function App() {
   useEffect(() => {
