@@ -6,7 +6,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="">
       <div
-        className="absolute inset-0 bg-cover bg-center  bg-scroll opacity-50 w-full h-full"
+        className="absolute inset-0 bg-cover bg-center  bg-scroll opacity-30 w-full h-full"
         style={{ backgroundImage: `url(${image})` }}
       ></div>
       <div className="max-w-[1770px]   mx-auto text-white">
