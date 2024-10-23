@@ -20,6 +20,7 @@ const LatestMovie: FC = () => {
   const { movies, loading, error } = useAppSelector((state) => state.allmovies);
   const movieWithimg = movies.filter((item) => item.poster_path != null);
 
+  console.log(loading,error)
   return (
     <div className="py-20">
       <div className="flex flex-col gap-8">
