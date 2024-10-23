@@ -12,7 +12,11 @@ const Home = () => {
         className="absolute top-0 opacity-30 inset-0 w-full h-full object-cover"
       /> */}
 
-      <div className="flex-1  flex flex-col gap-4    translate">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        className="flex-1  flex flex-col gap-4    translate"
+      >
         <Heading
           textfirst="Unlimited"
           highlightText="Entertainment,"

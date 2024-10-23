@@ -7,7 +7,7 @@ import PTag from "../Small/PTag";
 
 const Navbar = () => {
   return (
-    <nav className="px-6 py-6 border-b- z-50  fixed top-0 w-full max-w-[1740px]">
+    <nav className="px-6  py-6 border-b- z-50  fixed top-0 w-full max-w-[1740px]">
       <div className="flex justify-between items-center">
         <div>
           <figure className="flex items-end text-3xl justify-center gap-2">

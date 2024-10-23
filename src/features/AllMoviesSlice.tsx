@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-type initialState = {
+export type initialState = {
   movies: any[];
   loading: boolean;
   error: string | undefined;
@@ -16,35 +16,34 @@ const initialState: initialState = {
 const apiKey = import.meta.env.VITE_APIKEY;
 const baseUrl = import.meta.env.VITE_BASEURL;
 
-export const fetchLatestSeries = createAsyncThunk(
-  "series/fetchLatestSeries",
-  async () => {
+export const AllMoviesSeries = createAsyncThunk(
+  "series/allMovieSeries",
+  async (pageNumber: Number) => {
     const response = await axios.get(
-      `${baseUrl}/movie/upcoming?api_key=${apiKey}&sort_by=release_date.desc&page=1`
+      `${baseUrl}/discover/movie?api_key=${apiKey}&sort_by=popularity.desc&page=${pageNumber}`
     );
-    console.log(response.data.results);
     return response.data.results;
   }
 );
 
-const seriesSlice = createSlice({
-  name: "series",
+const allMoviesSlice = createSlice({
+  name: "allmovies",
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchLatestSeries.pending, (state) => {
+      .addCase(AllMoviesSeries.pending, (state) => {
         state.loading = true;
       })
-      .addCase(fetchLatestSeries.fulfilled, (state, action) => {
+      .addCase(AllMoviesSeries.fulfilled, (state, action) => {
         state.loading = false;
         state.movies = action.payload;
       })
-      .addCase(fetchLatestSeries.rejected, (state, action) => {
+      .addCase(AllMoviesSeries.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       });
   },
 });
 
-export default seriesSlice.reducer;
+export default allMoviesSlice.reducer;

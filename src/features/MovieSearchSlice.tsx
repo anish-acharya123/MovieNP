@@ -19,9 +19,8 @@ interface fetchParams {
   letter?: string;
   page: number;
 }
-
-const apiKey = "d315b6608d6c57f8ac20bbcb9164bdcc";
-const baseUrl = "https://api.themoviedb.org/3";
+const apiKey = import.meta.env.VITE_APIKEY;
+const baseUrl = import.meta.env.VITE_BASE_URL;
 
 export const SearchMovies = createAsyncThunk(
   "movies/fetchMovies",

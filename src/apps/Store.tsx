@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import MovieSearch from "../features/MovieSearchSlice";
-import MovieLatest from "../features/MovieLatestSlice";
+import MovieUpcoming from "../features/MovieLatestSlice";
+import AllMovies from "../features/AllMoviesSlice";
 import { TypedUseSelectorHook, useSelector } from "react-redux";
 
 export const store = configureStore({
   reducer: {
     movieSearch: MovieSearch,
-    movieLatest: MovieLatest,
+    movieLatest: MovieUpcoming,
+    allmovies: AllMovies,
   },
 });
 
