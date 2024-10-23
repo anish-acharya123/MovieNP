@@ -1,8 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Layout from "./Hoc/Layout";
-import Landingpage from "./Pages/Landingpage";
-import Searchpage from "./Pages/Searchpage";
+import Landingpage from "./pages/LandingPage";
 
 function App() {
   return (
@@ -10,7 +9,6 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Landingpage />} />
-          <Route path="/search" element={<Searchpage />} />
         </Routes>
       </Layout>
     </BrowserRouter>

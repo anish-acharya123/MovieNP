@@ -1,11 +1,12 @@
-import Home from "../Components/Home";
-import LatesMovies from "../Components/LatesMovies";
+import { FC } from "react";
+import Home from "../components/Home/Homepage";
 
-const Landingpage = () => {
+const Landingpage: FC = () => {
   return (
     <div>
       <Home />
-      <LatesMovies />
+      {/* <Home /> */}
+      <div className="h-56">anish</div>
     </div>
   );
 };
