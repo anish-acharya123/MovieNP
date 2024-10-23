@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Layout from "./Hoc/Layout";
-import Landingpage from "./pages/Landingpage";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Landingpage from "./pages/Landingpage";
 
 function App() {
   useEffect(() => {
