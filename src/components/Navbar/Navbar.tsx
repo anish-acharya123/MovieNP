@@ -1,24 +1,15 @@
 import NavItem from "../Small/NavList/NavItem";
 import List from "../Small/List";
 import NavList from "../../constants/NavConstant";
-import { Icon } from "@iconify/react";
 import ButtonComponent from "../Small/Button/ButtonComponent";
-import PTag from "../Small/PTag";
+import MainLogo from "../Small/Logo/MainLogo";
 
 const Navbar = () => {
   return (
-    <nav className="px-6  py-6 border-b- z-50  fixed top-0 w-full max-w-[1740px]">
+    <nav className="px-6  py-6 border-b- z-50  h-fit fixed top-0 w-full   max-w-[1740px]  bg-[rgba(255,255,255,0.2)] backdrop-blur-sm">
       <div className="flex justify-between items-center">
         <div>
-          <figure className="flex items-end text-3xl justify-center gap-2">
-            <Icon
-              icon="cbi:movies-anywhere"
-              className="inline text-yellow-400 text-4xl "
-            />
-            <p className="font-medium">
-              Movie<span className="text-yellow-400">NP</span>
-            </p>
-          </figure>
+          <MainLogo />
         </div>
         <div className="md:block hidden">
           <List

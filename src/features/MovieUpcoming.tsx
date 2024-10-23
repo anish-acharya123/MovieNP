@@ -16,13 +16,13 @@ const initialState: initialState = {
 const apiKey = import.meta.env.VITE_APIKEY;
 const baseUrl = import.meta.env.VITE_BASEURL;
 
-export const fetchLatestSeries = createAsyncThunk(
+export const fetchUpcomingMovies = createAsyncThunk(
   "series/fetchLatestSeries",
   async () => {
     const response = await axios.get(
       `${baseUrl}/movie/upcoming?api_key=${apiKey}&sort_by=release_date.desc&page=1`
     );
-    console.log(response.data.results);
+    // console.log(response.data.results);
     return response.data.results;
   }
 );
@@ -33,14 +33,14 @@ const seriesSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchLatestSeries.pending, (state) => {
+      .addCase(fetchUpcomingMovies.pending, (state) => {
         state.loading = true;
       })
-      .addCase(fetchLatestSeries.fulfilled, (state, action) => {
+      .addCase(fetchUpcomingMovies.fulfilled, (state, action) => {
         state.loading = false;
         state.movies = action.payload;
       })
-      .addCase(fetchLatestSeries.rejected, (state, action) => {
+      .addCase(fetchUpcomingMovies.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       });

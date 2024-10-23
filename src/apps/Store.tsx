@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import MovieSearch from "../features/MovieSearchSlice";
-import MovieUpcoming from "../features/MovieLatestSlice";
+import MovieUpcoming from "../features/MovieUpcoming";
 import AllMovies from "../features/AllMoviesSlice";
 import { TypedUseSelectorHook, useSelector } from "react-redux";
 
