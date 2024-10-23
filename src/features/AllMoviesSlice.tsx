@@ -20,7 +20,7 @@ export const AllMoviesSeries = createAsyncThunk(
   "series/allMovieSeries",
   async (pageNumber: Number) => {
     const response = await axios.get(
-      `${baseUrl}/discover/movie?api_key=${apiKey}&sort_by=popularity.desc&page=${pageNumber}`
+      `${baseUrl}/discover/movie?api_key=${apiKey}&sort_by=release_date.desc&page=${pageNumber}`
     );
     return response.data.results;
   }

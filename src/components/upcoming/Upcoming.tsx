@@ -12,7 +12,7 @@ const Upcoming: FC = () => {
     dispatch(fetchLatestSeries());
   }, []);
   const { movies, loading, error } = useAppSelector(
-    (state) => state.movieLatest
+    (state) => state.movieUpcoming
   );
   const movieWithimg = movies.filter((item) => item.poster_path != null);
   console.log(movieWithimg);
@@ -55,7 +55,6 @@ const Upcoming: FC = () => {
           ))}
         </section>
       </div>
-      <div className="py-32">movies</div>
     </div>
   );
 };
