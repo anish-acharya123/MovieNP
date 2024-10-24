@@ -6,7 +6,6 @@ import ButtonComponent from "../Small/Button/ButtonComponent";
 import Heading from "../Small/Heading";
 import PTag from "../Small/PTag";
 import { Icon } from "@iconify/react";
-import img from "../../assets/detail.png";
 import { useEffect } from "react";
 
 const EachDetail = () => {
