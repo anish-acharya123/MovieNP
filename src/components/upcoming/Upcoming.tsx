@@ -15,7 +15,7 @@ const Upcoming: FC = () => {
     (state) => state.movieUpcoming
   );
   const movieWithimg = movies.filter((item) => item.poster_path != null);
-
+  // console.log(movieWithimg);
   console.log(loading, error);
   return (
     <div className="py-20" data-aos="fade-up" data-aos-duration="2000">
@@ -29,6 +29,7 @@ const Upcoming: FC = () => {
             <MovieCard
               key={item.id}
               title={item.title}
+              id={item.id}
               releaseDate={item.release_date}
               posterPath={item.poster_path}
             />

@@ -16,7 +16,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Landingpage />} />
-          <Route path="/detailpage" element={<DetailPage />} />
+          <Route path="/detailpage/:id" element={<DetailPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>

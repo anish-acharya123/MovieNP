@@ -1,14 +1,33 @@
+import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useAppSelector, AppDispatch } from "../../apps/Store";
+import { EachMovie } from "../../features/EachMovieSlice";
 import ButtonComponent from "../Small/Button/ButtonComponent";
 import Heading from "../Small/Heading";
 import PTag from "../Small/PTag";
 import { Icon } from "@iconify/react";
 import img from "../../assets/detail.png";
+import { useEffect } from "react";
 
 const EachDetail = () => {
+  const { id } = useParams();
+  const dispatch = useDispatch<AppDispatch>();
+  const { movie, loading, error } = useAppSelector((state) => state.eachmovie);
+
+  useEffect(() => {
+    dispatch(EachMovie(parseInt(id ?? "1034541")));
+  }, []);
+
+  console.log(movie);
   return (
     <div className="flex flex-row bg-gray- gap-28 py-10">
       <figure>
-        <img src={img} alt="" />
+        <img
+          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          alt=""
+          className="h-[25rem] w-[18rem]"
+          loading="lazy"
+        />
       </figure>
       <div className="flex flex-col gap-4 ">
         <p className="tracking-wide text-yellow-400">NEW EPISODES</p>

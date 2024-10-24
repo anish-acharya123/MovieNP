@@ -20,7 +20,8 @@ const LatestMovie: FC = () => {
   const { movies, loading, error } = useAppSelector((state) => state.allmovies);
   const movieWithimg = movies.filter((item) => item.poster_path != null);
 
-  console.log(loading,error)
+  console.log(loading, error);
+  // console.log(movieWithimg);
   return (
     <div className="py-20">
       <div className="flex flex-col gap-8">
@@ -57,6 +58,7 @@ const LatestMovie: FC = () => {
                   <MovieCard
                     // title={movie.title}
                     // releaseDate={movie.release_date}
+                    id={movie.id}
                     posterPath={movie.poster_path}
                   />
                 </SwiperSlide>
