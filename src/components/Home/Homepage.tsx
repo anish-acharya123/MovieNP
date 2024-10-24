@@ -5,7 +5,7 @@ import PTag from "../Small/PTag";
 
 const Home = () => {
   return (
-    <div className="relative  flex  h-screen  justify-center items-center w-full    ">
+    <div className="relative  flex py-80 justify-center items-center w-full    ">
       {/* <img
         src={image}
         alt="image"

@@ -1,5 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
+import { useNavigate } from "react-router-dom";
 
 interface MovieCardProps {
   title?: string;
@@ -12,9 +13,10 @@ const MovieCard: React.FC<MovieCardProps> = ({
   releaseDate,
   posterPath,
 }) => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col gap-2 border- p-2 border-yellow-400 cursor-pointer">
-      <figure>
+      <figure onClick={() => navigate("/detailpage")}>
         <img
           src={`https://image.tmdb.org/t/p/w500${posterPath}`}
           alt={title}

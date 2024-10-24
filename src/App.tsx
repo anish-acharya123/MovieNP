@@ -5,6 +5,7 @@ import Layout from "./Hoc/Layout";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Landingpage from "./Pages/Landingpage";
+import DetailPage from "./components/DetailPage/DetailPage";
 
 function App() {
   useEffect(() => {
@@ -15,6 +16,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Landingpage />} />
+          <Route path="/detailpage" element={<DetailPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
