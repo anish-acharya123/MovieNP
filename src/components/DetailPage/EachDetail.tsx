@@ -18,7 +18,7 @@ const EachDetail = () => {
     dispatch(EachMovie(parseInt(id ?? "1034541")));
   }, []);
 
-  console.log(movie);
+  console.log(movie, loading, error);
   return (
     <div className="flex flex-row bg-gray- gap-28 py-10">
       <figure>
