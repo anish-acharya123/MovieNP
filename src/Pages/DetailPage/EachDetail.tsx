@@ -2,14 +2,14 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useAppSelector, AppDispatch } from "../../apps/Store";
-import { ImageComponent } from "../Small/image/ImageComponent";
+import { ImageComponent } from "../../components/Small/image/ImageComponent";
 import { EachMovie } from "../../features/EachMovieSlice";
-import ButtonComponent from "../Small/Button/ButtonComponent";
-import Heading from "../Small/Heading";
-import PTag from "../Small/PTag";
-import List from "../Small/List";
+import ButtonComponent from "../../components/Small/Button/ButtonComponent";
+import Heading from "../../components/Small/Heading";
+import PTag from "../../components/Small/PTag";
+import List from "../../components/Small/List";
 import EachMovieIconList from "../../constants/Iconlist";
-import IconComponent from "../Small/Icon/IconComponent";
+import IconComponent from "../../components/Small/Icon/IconComponent";
 
 const EachDetail = () => {
   const { id } = useParams();
@@ -63,7 +63,7 @@ const EachDetail = () => {
               label="Play Now"
               className="flex justify-center items-center py-2 px-4 gap-2 border-2 border-yellow-400 rounded-md"
               icon="mdi:play"
-              onClick={() => console.log("play btn")}
+              onClick={() => alert("This is just a demo site. Thank you")}
             />
           </div>
         </div>

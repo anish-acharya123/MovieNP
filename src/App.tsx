@@ -5,7 +5,8 @@ import Layout from "./Hoc/Layout";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Landingpage from "./Pages/Landingpage";
-import DetailPage from "./components/DetailPage/DetailPage";
+import DetailPage from "./Pages/DetailPage/DetailPage";
+import SignIn from "./Pages/signIn/SignIn";
 
 function App() {
   useEffect(() => {
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landingpage />} />
           <Route path="/detailpage/:id" element={<DetailPage />} />
+          <Route path="/signin" element={<SignIn />} />
         </Routes>
       </Layout>
     </BrowserRouter>

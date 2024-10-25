@@ -1,16 +1,10 @@
 import ButtonComponent from "../Small/Button/ButtonComponent";
 import Heading from "../Small/Heading";
 import PTag from "../Small/PTag";
-// import image from "../../assets/homeimg.png";
 
 const Home = () => {
   return (
     <div className="relative  flex py-80 justify-center items-center w-full    ">
-      {/* <img
-        src={image}
-        alt="image"
-        className="absolute top-0 opacity-30 inset-0 w-full h-full object-cover"
-      /> */}
 
       <div
         data-aos="fade-up"

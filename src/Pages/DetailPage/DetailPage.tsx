@@ -1,5 +1,5 @@
-import LatestMovie from "../latest/LatestMovie";
-import ButtonComponent from "../Small/Button/ButtonComponent";
+import LatestMovie from "../../components/latest/LatestMovie";
+import ButtonComponent from "../../components/Small/Button/ButtonComponent";
 import EachDetail from "./EachDetail";
 import { useNavigate } from "react-router-dom";
 
@@ -14,9 +14,8 @@ const DetailPage = () => {
           className="font-medium text-xl"
         />
       </div>
-
       <EachDetail />
-      <LatestMovie/>
+      <LatestMovie />
     </div>
   );
 };
