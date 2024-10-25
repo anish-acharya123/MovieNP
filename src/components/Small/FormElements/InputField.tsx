@@ -1,24 +1,29 @@
 import { Path, UseFormRegister } from "react-hook-form";
 import { IFormValues } from "./types";
 
-type InputProps = {
+type InputFieldProps = {
   label: Path<IFormValues>;
   register: UseFormRegister<IFormValues>;
-  required: boolean;
+  required?: boolean;
+  type?: string;
   className?: string;
 };
 
-const InputField = ({ label, register, required, className }: InputProps) => {
-  return (
-    <>
-      <label>{label}</label>
-      <input
-        type={label}
-        className={className}
-        {...register(label, { required })}
-      />
-    </>
-  );
-};
+const InputField = ({
+  label,
+  register,
+  required,
+  type = "text",
+  className,
+}: InputFieldProps) => (
+  <div>
+    <label>{label}</label>
+    <input
+      type={type}
+      {...register(label, { required })}
+      className={className}
+    />
+  </div>
+);
 
 export default InputField;
