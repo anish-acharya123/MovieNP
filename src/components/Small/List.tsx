@@ -3,7 +3,7 @@ import React from "react";
 type ListProps<T> = {
   items: T[];
   renderItem: (item: T) => React.ReactElement;
-  className: string;
+  className?: string;
 };
 
 const List = <T,>({ items, renderItem, className }: ListProps<T>) => {

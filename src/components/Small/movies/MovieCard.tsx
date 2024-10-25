@@ -2,6 +2,7 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import { useNavigate } from "react-router-dom";
 import { ImageComponent } from "../image/ImageComponent";
+import IconComponent from "../Icon/IconComponent";
 
 interface MovieCardProps {
   title?: string;
@@ -36,18 +37,16 @@ const MovieCard: React.FC<MovieCardProps> = ({
         </div>
       )}
       {title && releaseDate && (
-        <div className="flex justify-between">
-          <p className="border-2 px-2 w-fit text-sm">HD</p>
-          <p className="px-2 w-fit text-sm">
-            <span>
-              <Icon
-                icon="ant-design:star-filled"
-                className="inline text-xl text-yellow-400"
-              />
-            </span>{" "}
-            <span>{(Math.random() * 10).toFixed()}</span>
-          </p>
-        </div>
+        <ul>
+          <IconComponent
+            parentClass="flex justify-between flex-row-reverse"
+            labelFirstClass="border-2 px-2 w-fit text-sm"
+            labelfirst="HD"
+            icon="ant-design:star-filled"
+            iconClass="inline text-xl text-yellow-400"
+            iconText={(Math.random() * 10).toFixed()}
+          />
+        </ul>
       )}
     </div>
   );

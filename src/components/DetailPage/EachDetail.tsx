@@ -1,13 +1,15 @@
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useAppSelector, AppDispatch } from "../../apps/Store";
+import { ImageComponent } from "../Small/image/ImageComponent";
 import { EachMovie } from "../../features/EachMovieSlice";
 import ButtonComponent from "../Small/Button/ButtonComponent";
 import Heading from "../Small/Heading";
 import PTag from "../Small/PTag";
-import { Icon } from "@iconify/react";
-import { useEffect } from "react";
-import { ImageComponent } from "../Small/image/ImageComponent";
+import List from "../Small/List";
+import EachMovieIconList from "../../constants/Iconlist";
+import IconComponent from "../Small/Icon/IconComponent";
 
 const EachDetail = () => {
   const { id } = useParams();
@@ -41,31 +43,21 @@ const EachDetail = () => {
           <PTag label="Action, Drama, Adventure, Science fiction" />
         </div>
         <div className="bg-slate-700 p-4 opacity- w-fit gap-8 bg-gray- flex items-center  rounded-md">
-          <div className=" w-fit h-fit">
-            <p>
-              <figure>
-                <Icon
-                  icon="material-symbols:share-outline"
-                  className="text-5xl"
-                />
-              </figure>
-              <span className="text-[1rem] text-slate-200">Share</span>
-            </p>
-          </div>
-          <div className=" w-fit h-fit">
-            <p>
-              <span className="text-[1.2rem]">Rate The Show</span>
-              <figure className="text-center">
-                <Icon
-                  icon="material-symbols:star"
-                  className="text-2xl inline "
-                />{" "}
-                <span className="text-xl">
-                  {(Math.random() * 10).toFixed()}
-                </span>
-              </figure>
-            </p>
-          </div>
+          <List
+            items={EachMovieIconList}
+            className="flex gap-8 items-center"
+            renderItem={(item) => (
+              <IconComponent
+                key={item.id}
+                parentClass={`w-fit h-fit flex ${item.parentClass} justify-center items-center `}
+                icon={item.icon}
+                iconClass={item.className}
+                labelFirstClass="text-[1rem] "
+                labelfirst={item.label}
+                iconText={item.iconText}
+              />
+            )}
+          />
           <div>
             <ButtonComponent
               label="Play Now"
