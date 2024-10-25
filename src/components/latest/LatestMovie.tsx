@@ -56,8 +56,6 @@ const LatestMovie: FC = () => {
               {movieWithimg.map((movie, index) => (
                 <SwiperSlide key={index}>
                   <MovieCard
-                    // title={movie.title}
-                    // releaseDate={movie.release_date}
                     id={movie.id}
                     posterPath={movie.poster_path}
                   />

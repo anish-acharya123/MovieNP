@@ -2,14 +2,22 @@ import NavItem from "../Small/NavList/NavItem";
 import List from "../Small/List";
 import NavList from "../../constants/NavConstant";
 import ButtonComponent from "../Small/Button/ButtonComponent";
-import MainLogo from "../Small/Logo/MainLogo";
+import IconComponent from "../Small/Icon/IconComponent";
 
 const Navbar = () => {
   return (
     <nav className="px-6  py-6 border-b- z-50  h-fit fixed top-0 w-full   max-w-[1740px]  bg-[rgba(255,255,255,0.2)] backdrop-blur-sm">
       <div className="flex justify-between items-center">
         <div>
-          <MainLogo />
+          <IconComponent
+            parentClass="flex items-end text-3xl justify- gap-2"
+            icon="cbi:movies-anywhere"
+            iconClass="inline text-yellow-400 text-4xl"
+            labelfirst="Movie"
+            textClass="font-medium"
+            labelSecond="NP"
+            labelSecondClass="text-yellow-400"
+          />
         </div>
         <div className="md:block hidden">
           <List

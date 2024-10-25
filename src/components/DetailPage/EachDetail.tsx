@@ -7,6 +7,7 @@ import Heading from "../Small/Heading";
 import PTag from "../Small/PTag";
 import { Icon } from "@iconify/react";
 import { useEffect } from "react";
+import { ImageComponent } from "../Small/image/ImageComponent";
 
 const EachDetail = () => {
   const { id } = useParams();
@@ -15,22 +16,22 @@ const EachDetail = () => {
 
   useEffect(() => {
     dispatch(EachMovie(parseInt(id ?? "1034541")));
-  }, []);
+  }, [id]);
 
   console.log(movie, loading, error);
+  console.log(movie.title);
   return (
     <div className="flex flex-row bg-gray- gap-28 py-10">
-      <figure>
-        <img
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-          alt=""
-          className="h-[25rem] w-[18rem]"
-          loading="lazy"
-        />
-      </figure>
-      <div className="flex flex-col gap-4 ">
+      <ImageComponent
+        parentClassName={"w-1/5"}
+        alt={movie.title}
+        className="h-[25rem] w-[20rem]"
+        poster={movie.poster_path}
+      />
+
+      <div className="flex flex-col gap-4 w-4/5">
         <p className="tracking-wide text-yellow-400">NEW EPISODES</p>
-        <Heading textfirst="Free" highlightText="Guy," />
+        <Heading textfirst={movie.title} highlightText="" />
         <div className="flex gap-4">
           <PTag
             label="Movies"
@@ -75,12 +76,7 @@ const EachDetail = () => {
           </div>
         </div>
         <div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-            rem molestiae atque quia consequatur quaerat. <br /> Dolorum, cumque
-            distinctio cum laboriosam rem atque maiores eum vel sapiente ipsa
-            tenetur? Dolorum harum nisi expedita ipsam error.
-          </p>
+          <p className="text-xl">{movie.overview}</p>
         </div>
       </div>
     </div>
