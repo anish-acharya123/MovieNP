@@ -4,6 +4,7 @@ import { IFormValues } from "./types";
 type InputFieldProps = {
   label: Path<IFormValues>;
   register: UseFormRegister<IFormValues>;
+  placeholder: string;
   required?: boolean;
   type?: string;
   className?: string;
@@ -14,16 +15,18 @@ const InputField = ({
   register,
   required,
   type = "text",
+  placeholder,
   className,
 }: InputFieldProps) => (
-  <div>
-    <label>{label}</label>
+  <>
+    <label className="text-xl capitalize">{label}</label>
     <input
+      placeholder={placeholder}
       type={type}
       {...register(label, { required })}
       className={className}
     />
-  </div>
+  </>
 );
 
 export default InputField;
