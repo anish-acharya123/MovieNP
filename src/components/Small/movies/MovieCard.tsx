@@ -1,5 +1,4 @@
 import React from "react";
-import { Icon } from "@iconify/react";
 import { useNavigate } from "react-router-dom";
 import { ImageComponent } from "../image/ImageComponent";
 import IconComponent from "../Icon/IconComponent";
