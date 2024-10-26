@@ -1,23 +1,22 @@
-import { Path, UseFormRegister } from "react-hook-form";
-import { ISignInValues } from "./types";
+import { Path, UseFormRegister, FieldValues } from "react-hook-form";
 
-type InputFieldProps = {
-  label: Path<ISignInValues>;
-  register: UseFormRegister<ISignInValues>;
+type InputFieldProps<T extends FieldValues> = {
+  label: Path<T>;
+  register: UseFormRegister<T>;
   placeholder: string;
   required?: boolean;
   type?: string;
   className?: string;
 };
 
-const InputField = ({
+const InputField = <T extends FieldValues>({
   label,
-  register,
+  register, 
   required,
   type = "text",
   placeholder,
   className,
-}: InputFieldProps) => (
+}: InputFieldProps<T>) => (
   <>
     <label className="text-xl capitalize">{label}</label>
     <input

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { ImageComponent } from "../image/ImageComponent";
 import IconComponent from "../Icon/IconComponent";
 
+
 interface MovieCardProps {
   title?: string;
   releaseDate?: string;
@@ -23,7 +24,8 @@ const MovieCard: React.FC<MovieCardProps> = ({
         <ImageComponent
           alt={title || "movie"}
           className={"h-[22rem] w-[18rem]"}
-          poster={posterPath}
+          poster={posterPath }
+       
         />
       </div>
 

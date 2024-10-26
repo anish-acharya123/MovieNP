@@ -8,6 +8,7 @@ import Landingpage from "./Pages/Landingpage";
 import DetailPage from "./Pages/DetailPage/DetailPage";
 import SignIn from "./Pages/signIn/SignIn";
 import SignUp from "./Pages/SignUp/SignUp";
+import Movies from "./Pages/Movies/Movies";
 
 function App() {
   useEffect(() => {
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landingpage />} />
           <Route path="/detailpage/:id" element={<DetailPage />} />
+          <Route path="/movies" element={<Movies />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>

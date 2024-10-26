@@ -2,9 +2,10 @@ import { Path, SubmitHandler } from "react-hook-form";
 import { ISignUpValues } from "../../components/Small/FormElements/types";
 import Form from "../../components/Form/Form";
 import FormMainGroup from "../../components/Small/FormElements/FormMainGroup";
+import { Link } from "react-router-dom";
 
-type Field = {
-  label: Path<ISignUpValues>;
+type Field<T> = {
+  label: Path<T>;
   type?: string;
   required?: boolean;
   placeholder: string;
@@ -15,7 +16,7 @@ const SignUp = () => {
   const className =
     "text-black py-2 px-3 rounded-md outline-none appearance-none	";
 
-  const fields: Field[] = [
+  const fields: Field<ISignUpValues>[] = [
     {
       label: "email",
       type: "email",
@@ -46,12 +47,30 @@ const SignUp = () => {
     },
   ];
 
-  
   const onSubmit: SubmitHandler<ISignUpValues> = (data) => console.log(data);
 
   return (
     <FormMainGroup>
       <Form fields={fields} page="Sign Up" onSubmit={onSubmit} />
+      <div className="flex justify-between  w-full">
+        <p>
+          <input type="checkbox" name="" id="" className="cursor-pointer" />
+          <span> Remember me</span>
+        </p>
+        <p>
+          <a href="#" className="underline">
+            Forgot Password
+          </a>
+        </p>
+      </div>
+      <div className="flex text-center w-full justify-center gap-2">
+        <p>Already Register?</p>
+        <p>
+          <Link to="/signin" className="underline">
+            SingIn Now.
+          </Link>
+        </p>
+      </div>
     </FormMainGroup>
   );
 };
