@@ -1,3 +1,5 @@
+
+
 import image from "../../../assets/detail.png";
 
 type imageProps = React.CSSProperties & {
