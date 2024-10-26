@@ -1,9 +1,9 @@
 import { Path, UseFormRegister } from "react-hook-form";
-import { IFormValues } from "./types";
+import { ISignInValues } from "./types";
 
 type InputFieldProps = {
-  label: Path<IFormValues>;
-  register: UseFormRegister<IFormValues>;
+  label: Path<ISignInValues>;
+  register: UseFormRegister<ISignInValues>;
   placeholder: string;
   required?: boolean;
   type?: string;

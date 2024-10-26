@@ -1,9 +1,9 @@
 import { useForm, SubmitHandler, FieldErrors, Path } from "react-hook-form";
 import InputField from "../Small/FormElements/InputField";
-import { IFormValues } from "../Small/FormElements/types";
+import { ISignInValues } from "../Small/FormElements/types";
 
 type Field = {
-  label: Path<IFormValues>; /// this is similar to keyof IFormValues
+  label: Path<ISignInValues>; /// this is similar to keyof IFormValues
   type?: string;
   placeholder: string;
   required?: boolean;
@@ -12,18 +12,18 @@ type Field = {
 
 type FormComponentProps = {
   fields: Field[];
-  onSubmit: SubmitHandler<IFormValues>;
-  error?: FieldErrors<IFormValues>;
+  onSubmit: SubmitHandler<ISignInValues>;
+  error?: FieldErrors<ISignInValues>;
   page: string;
 };
 
 const Form = ({ fields, onSubmit, error, page }: FormComponentProps) => {
-  const { register, handleSubmit } = useForm<IFormValues>();
+  const { register, handleSubmit } = useForm<ISignInValues>();
   return (
-    <div className=" bg-[rgba(0,0,0,0.2)] backdrop-blur-md rounded-md  ">
+   
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" flex-col min-w-[30rem] flex space-y-4 border-2 py-8 px-16 "
+        className=" flex-col  flex space-y-4  "
       >
         <h2 className="text-4xl font-medium">{page}</h2>
         {fields.map((field) => (
@@ -43,11 +43,9 @@ const Form = ({ fields, onSubmit, error, page }: FormComponentProps) => {
         ))}
         <input
           type="submit"
-          className="text-white bg-blue-500 p-2 cursor-pointer"
+          className="text-black font-medium  bg-yellow-400 p-2 cursor-pointer"
         />
       </form>
-      <div></div>
-    </div>
   );
 };
 
