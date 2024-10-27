@@ -13,7 +13,7 @@ const Heading = ({
   className,
 }: HeadingProps) => {
   return (
-    <h1 className={`text-7xl leading-[120%] ${className}`}>
+    <h1 className={` leading-[120%] ${className}`}>
       {textfirst}{" "}
       {highlightText && (
         <span className="text-yellow-400">{highlightText}</span>

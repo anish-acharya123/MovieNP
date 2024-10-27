@@ -6,7 +6,7 @@ type IconProps = {
   iconText?: string;
   textClass?: string;
   parentClass?: string;
-  labelfirst: string;
+  labelfirst?: string;
   labelSecond?: string;
   labelFirstClass?: string;
   labelSecondClass?: string;
@@ -24,7 +24,7 @@ const IconComponent = ({
   labelSecondClass,
 }: IconProps) => {
   return (
-    <li className={parentClass}>
+    <div className={parentClass}>
       <span>
         <Icon icon={icon} className={iconClass} />
         {iconText && <span className="text-xl">{iconText}</span>}
@@ -35,7 +35,7 @@ const IconComponent = ({
           <span className={labelSecondClass}>{labelSecond}</span>
         )}
       </p>
-    </li>
+    </div>
   );
 };
 

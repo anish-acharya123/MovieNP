@@ -3,7 +3,7 @@ import { useAppSelector, AppDispatch } from "../../apps/Store";
 import { AllMoviesSeries } from "../../features/AllMoviesSlice";
 import { useEffect, useState } from "react";
 import MovieCard from "../../components/Small/movies/MovieCard";
-import { Pagination, Box, CircularProgress } from "@mui/material";
+import { Pagination } from "@mui/material";
 
 const Movies = () => {
   const [page, setPage] = useState(1);
@@ -18,6 +18,7 @@ const Movies = () => {
 
   const handlePageChange = (
     event: React.ChangeEvent<unknown>,
+
     value: number
   ) => {
     setPage(value);
@@ -27,7 +28,7 @@ const Movies = () => {
     // <Box>
     <div className="py-52 relative">
       <h1 className="text-xl font-medium">Home/all-moviess</h1>
-      <section className="flex md:flex-  flex-wrap justify-between gap-4">
+      <section className="grid grid-cols-5 gap-4">
         {movies.map((item) => (
           <MovieCard
             key={item.id}
@@ -49,11 +50,15 @@ const Movies = () => {
           display: "flex",
           justifyContent: "center",
           marginTop: 2,
+          // border: "2px solid white",
           "& .MuiPaginationItem-root": {
-            color: "white", // Set default text color
+            color: "white",
+            border: "2px solid white"
+
+            // backgroundColor: "yellow"
           },
           "& .Mui-selected": {
-            backgroundColor: "yellow", // Change the active number's background color
+            backgroundColor: "yellow", 
             color: "black", // Change the active number text color
           },
         }}

@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react";
 
 type ButtonProps = React.CSSProperties & {
   label?: string;
-  onClick: () => void;
+  onClick?: () => void;
   icon?: string;
   className: string;
 };
