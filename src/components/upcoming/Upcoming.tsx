@@ -20,11 +20,11 @@ const Upcoming: FC = () => {
   return (
     <div className="py-20" data-aos="fade-up" data-aos-duration="2000">
       <div className="flex flex-col gap-8  ">
-        <div className="">
-          <p className="text-xl text-yellow-400">ONLINE STREAMING</p>
-          <h2 className="text-4xl mt-4 font-medium">Upcoming Movies</h2>
+        <div className="space-y-2">
+          <p className="md:text-xl text-yellow-400">ONLINE STREAMING</p>
+          <h2 className="lg:text-4xl md:text-3xl text-3xl font-medium">Upcoming Movies</h2>
         </div>
-        <section className="flex md:flex-nowrap flex-wrap justify-between gap-4">
+        <section className="grid  lg:grid-cols-6 md:grid-cols-4  sm:grid-cols-3 gap-4">
           {movieWithimg.slice(0, 6).map((item) => (
             <MovieCard
               key={item.id}

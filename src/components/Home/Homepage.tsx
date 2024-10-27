@@ -13,7 +13,7 @@ const Home = () => {
           textfirst="Unlimited"
           highlightText="Entertainment,"
           textsecond="Movies, TVs Shows, & More."
-          className="lg:text-7xl text md:text-5xl text-4xl"
+          className="lg:text-7xl  sm:text-5xl  text-4xl"
         />
         <div className="flex gap-10  items-center md:text-[16px] text-sm">
           <p className="bg-white text-black px-2 text-center">Movies</p>
