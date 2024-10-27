@@ -23,10 +23,12 @@ const LatestMovie: FC = () => {
   console.log(loading, error);
   // console.log(movieWithimg);
   return (
-    <div className="py-20">
-      <div className="flex flex-col gap-8">
+    <div className="pt-12 pb-8">
+      <div className="flex flex-col gap-4">
         <div>
-          <h2 className="text-4xl mt-4 font-medium">Latest Movies</h2>
+          <h2 className="lg:text-4xl md:text-3xl text-3xl  mt-4 font-medium">
+            Latest Movies
+          </h2>
         </div>
         <section className="flex flex-wrap justify-between gap-4">
           <div className="swiper-container w-full">
@@ -37,10 +39,18 @@ const LatestMovie: FC = () => {
               loop={true}
               autoplay={{ delay: 2000 }}
               //   pagination={{ clickable: true }}
-              //   navigation={true}
+                // navigation={true}
               breakpoints={{
-                640: {
+                0: {
                   slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+                380: {
+                  slidesPerView: 3,
+                  spaceBetween: 10,
+                },
+                640: {
+                  slidesPerView: 3,
                   spaceBetween: 10,
                 },
                 768: {
@@ -55,10 +65,7 @@ const LatestMovie: FC = () => {
             >
               {movieWithimg.map((movie, index) => (
                 <SwiperSlide key={index}>
-                  <MovieCard
-                    id={movie.id}
-                    posterPath={movie.poster_path}
-                  />
+                  <MovieCard id={movie.id} posterPath={movie.poster_path} />
                 </SwiperSlide>
               ))}
             </Swiper>

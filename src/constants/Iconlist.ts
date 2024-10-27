@@ -2,7 +2,7 @@ const EachMovieIconList = [
   {
     id: 1,
     icon: "material-symbols:share-outline",
-    className: "text-5xl",
+    className: "md:text-5xl text-3xl",
     label: "Share",
     parentClass: "flex-col"
   },
@@ -12,7 +12,7 @@ const EachMovieIconList = [
     className: "text-2xl inline",
     label: "Rate The Show",
     iconText:  (Math.random() * 10).toFixed(),
-    parentClass: "flex-col-reverse"
+    parentClass: "flex-col-reverse bg-green- text-center"
   },
 ];
 

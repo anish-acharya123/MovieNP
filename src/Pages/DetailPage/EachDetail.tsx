@@ -6,7 +6,6 @@ import { ImageComponent } from "../../components/Small/image/ImageComponent";
 import { EachMovie } from "../../features/EachMovieSlice";
 import ButtonComponent from "../../components/Small/Button/ButtonComponent";
 import Heading from "../../components/Small/Heading";
-import PTag from "../../components/Small/PTag";
 import List from "../../components/Small/List";
 import EachMovieIconList from "../../constants/Iconlist";
 import IconComponent from "../../components/Small/Icon/IconComponent";
@@ -23,29 +22,30 @@ const EachDetail = () => {
   console.log(movie, loading, error);
   console.log(movie.title);
   return (
-    <div className="flex flex-row bg-gray- gap-28 py-10">
+    <div className="flex items-center sm:flex-row flex-col bg-gray- lg:gap-28 md:gap-20 gap-4 pt-10">
       <ImageComponent
-        parentClassName={"w-1/5"}
+        parentClassName={"lg:w-1/5 sm:w-2/5"}
         alt={movie.title}
         className="h-[25rem] w-[20rem]"
         poster={movie.poster_path}
       />
 
-      <div className="flex flex-col gap-4 w-4/5">
+      <div className="flex flex-col gap-4 lg:w-4/5 sm:w-3/5 w-full sm:items-start items-center">
         <p className="tracking-wide text-yellow-400">NEW EPISODES</p>
-        <Heading textfirst={movie.title} highlightText="" />
-        <div className="flex gap-4">
-          <PTag
-            label="Movies"
-            className="bg-white text-black px-2 text-center"
-          />
-          <PTag label="HD" className="border-2 px-2" />
-          <PTag label="Action, Drama, Adventure, Science fiction" />
+        <Heading
+          textfirst={movie.title}
+          highlightText=""
+          className="lg:text-7xl  sm:text-5xl  text-4xl"
+        />
+        <div className="flex sm:gap-10 gap-4  items-center md:text-[16px] text-sm">
+          <p className="bg-white text-black px-2 text-center">Movies</p>
+          <p className="border-2 px-2">HD</p>
+          <p>Action, Drama</p>
         </div>
-        <div className="bg-slate-700 p-4 opacity- w-fit gap-8 bg-gray- flex items-center  rounded-md">
+        <div className="bg-slate-700 p-4 opacity- sm:flex-row flex-col justify-center sm:w-fit w-fit md:gap-8 sm:gap-3 gap-4 bg-gray- flex items-center  rounded-md ">
           <List
             items={EachMovieIconList}
-            className="flex gap-8 items-center"
+            className="flex md:gap-8 sm:gap-10 gap-10 items-center  "
             renderItem={(item) => (
               <IconComponent
                 key={item.id}
@@ -58,17 +58,17 @@ const EachDetail = () => {
               />
             )}
           />
-          <div>
+          <div className="">
             <ButtonComponent
               label="Play Now"
-              className="flex justify-center items-center py-2 px-4 gap-2 border-2 border-yellow-400 rounded-md"
+              className="flex justify-center items-center py-2 px-2 md:px-4 gap-2 text-sm  md:text-xl  border-2 border-yellow-400 rounded-md"
               icon="mdi:play"
               onClick={() => alert("This is just a demo site. Thank you")}
             />
           </div>
         </div>
         <div>
-          <p className="text-xl">{movie.overview}</p>
+          <p className="md:text-xl text-sm text-justify">{movie.overview}</p>
         </div>
       </div>
     </div>

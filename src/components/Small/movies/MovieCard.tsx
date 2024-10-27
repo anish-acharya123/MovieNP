@@ -19,20 +19,20 @@ const MovieCard: React.FC<MovieCardProps> = ({
 }) => {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col gap-2 border- p-2 border-yellow-400 cursor-pointer">
+    <div className=" w-fit flex flex-col gap-2 border- p-2 border-yellow-400 cursor-pointer">
       <div onClick={() => navigate(`/detailpage/${id}`)}>
         <ImageComponent
           alt={title || "movie"}
-          className={"h-[22rem] w-[18rem]"}
+          className={"md:h-[22rem] w-[18rem]"}
           poster={posterPath }
        
         />
       </div>
 
       {title && releaseDate && (
-        <div className="flex justify-between items-start">
-          <p className="text-[1rem]">{title}</p>
-          <p className="text-[1rem] text-yellow-400">
+        <div className="flex justify-between items-start gap-4">
+          <p className="sm:text-[1rem] text-sm">{title}</p>
+          <p className="sm:text-[1rem] text-sm text-yellow-400">
             {releaseDate.split("-")[0]}
           </p>
         </div>
@@ -41,10 +41,10 @@ const MovieCard: React.FC<MovieCardProps> = ({
         <ul>
           <IconComponent
             parentClass="flex justify-between flex-row-reverse"
-            labelFirstClass="border-2 px-2 w-fit text-sm"
+            labelFirstClass="border-2 px-1 w-fit md:text-sm text-[0.7rem]"
             labelfirst="HD"
             icon="ant-design:star-filled"
-            iconClass="inline text-xl text-yellow-400"
+            iconClass="inline sm:text-xl text-sm text-yellow-400"
             iconText={(Math.random() * 10).toFixed()}
           />
         </ul>

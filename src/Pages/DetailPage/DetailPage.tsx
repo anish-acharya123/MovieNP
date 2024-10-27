@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const DetailPage = () => {
   const navigate = useNavigate();
   return (
-    <div className="relative pt-32 flex flex-col gap-10">
+    <div className="relative md:pt-32 pt-28 flex flex-col md:gap-10">
       <div>
         <ButtonComponent
           onClick={() => navigate("/")}

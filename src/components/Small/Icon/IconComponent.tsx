@@ -27,7 +27,7 @@ const IconComponent = ({
     <div className={parentClass}>
       <span>
         <Icon icon={icon} className={iconClass} />
-        {iconText && <span className="text-xl">{iconText}</span>}
+        {iconText && <span className="md:text-xl text-sm">{iconText}</span>}
       </span>
       <p className={textClass}>
         <span className={labelFirstClass}>{labelfirst}</span>
