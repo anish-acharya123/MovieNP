@@ -14,7 +14,7 @@ const Movies = () => {
     dispatch(AllMoviesSeries(page));
   }, [page]);
 
-  console.log(movies, loading, error);
+  console.log(loading, error);
 
   const handlePageChange = (
     event: React.ChangeEvent<unknown>,
@@ -53,12 +53,12 @@ const Movies = () => {
           // border: "2px solid white",
           "& .MuiPaginationItem-root": {
             color: "white",
-            border: "2px solid white"
+            border: "2px solid white",
 
             // backgroundColor: "yellow"
           },
           "& .Mui-selected": {
-            backgroundColor: "yellow", 
+            backgroundColor: "yellow",
             color: "black", // Change the active number text color
           },
         }}

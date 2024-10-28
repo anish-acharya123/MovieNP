@@ -1,3 +1,4 @@
+import { useState } from "react";
 import NavItem from "../Small/NavList/NavItem";
 import List from "../Small/List";
 import NavList from "../../constants/NavConstant";
@@ -6,6 +7,7 @@ import IconComponent from "../Small/Icon/IconComponent";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   return (
     <nav className="px-6  md:py-6 py-4 border-b- z-50  h-fit fixed top-0 w-full   max-w-[1740px]  bg-[rgba(255,255,255,0.2)] backdrop-blur-sm">
@@ -22,10 +24,19 @@ const Navbar = () => {
           />
         </div>
 
-        <ButtonComponent
-          icon="quill:hamburger-sidebar"
-          className=" text-yellow-400 md:hidden block text-4xl "
-        />
+        <div onClick={() => setOpen(!open)}>
+          {open ? (
+            <ButtonComponent
+              icon="bitcoin-icons:cross-filled"
+              className=" text-yellow-400 md:hidden block text-4xl "
+            />
+          ) : (
+            <ButtonComponent
+              icon="quill:hamburger-sidebar"
+              className=" text-yellow-400 md:hidden block text-4xl "
+            />
+          )}
+        </div>
 
         <div className="md:block hidden">
           <List
