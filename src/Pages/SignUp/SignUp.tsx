@@ -52,7 +52,7 @@ const SignUp = () => {
   return (
     <FormMainGroup>
       <Form fields={fields} page="Sign Up" onSubmit={onSubmit} />
-      <div className="flex justify-between  w-full">
+      <div className="flex justify-between  w-full text-sm">
         <p>
           <input type="checkbox" name="" id="" className="cursor-pointer" />
           <span> Remember me</span>
@@ -63,7 +63,7 @@ const SignUp = () => {
           </a>
         </p>
       </div>
-      <div className="flex text-center w-full justify-center gap-2">
+      <div className="flex text-center w-full justify-center gap-2 text-sm">
         <p>Already Register?</p>
         <p>
           <Link to="/signin" className="underline">

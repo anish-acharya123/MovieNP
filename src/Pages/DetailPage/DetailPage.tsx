@@ -9,7 +9,7 @@ const DetailPage = () => {
     <div className="relative md:pt-32 pt-28 flex flex-col md:gap-10">
       <div>
         <ButtonComponent
-          onClick={() => navigate("/")}
+          onClick={() => navigate(-1)}
           label="← Back"
           className="font-medium text-xl"
         />

@@ -18,7 +18,7 @@ const InputField = <T extends FieldValues>({
   className,
 }: InputFieldProps<T>) => (
   <>
-    <label className="text-xl capitalize">{label}</label>
+    <label className="sm:text-xl text-sm capitalize">{label}</label>
     <input
       placeholder={placeholder}
       type={type}

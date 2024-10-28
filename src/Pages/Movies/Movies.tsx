@@ -4,6 +4,7 @@ import { AllMoviesSeries } from "../../features/AllMoviesSlice";
 import { useEffect, useState } from "react";
 import MovieCard from "../../components/Small/movies/MovieCard";
 import { Pagination } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Movies = () => {
   const [page, setPage] = useState(1);
@@ -26,9 +27,24 @@ const Movies = () => {
 
   return (
     // <Box>
-    <div className="py-52 relative">
-      <h1 className="text-xl font-medium">Home/all-moviess</h1>
-      <section className="grid grid-cols-5 gap-4">
+    <div
+      className="pt-32 pb-20 relative"
+      data-aos="fade-up"
+      data-aos-duration="1500"
+    >
+      <div className=" w-full space-y-4">
+        <p className="text-left text-yellow-400">
+          <Link to="/" className="hover:underline hover:text-black">
+            Home
+          </Link>{" "}
+          / {"all-movies"}
+        </p>
+        <h2 className="text-center md:text-4xl text-3xl sm:block  font-semibold text-yellow-400">
+          {"All MOVIES"}
+          'S LISTS
+        </h2>
+      </div>
+      <section className="grid  lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-4">
         {movies.map((item) => (
           <MovieCard
             key={item.id}
@@ -50,16 +66,30 @@ const Movies = () => {
           display: "flex",
           justifyContent: "center",
           marginTop: 2,
-          // border: "2px solid white",
           "& .MuiPaginationItem-root": {
             color: "white",
             border: "2px solid white",
-
-            // backgroundColor: "yellow"
           },
           "& .Mui-selected": {
             backgroundColor: "yellow",
-            color: "black", // Change the active number text color
+            color: "black",
+          },
+          // Responsive styles
+          "@media (max-width: 600px)": {
+            "& .MuiPaginationItem-root": {
+              fontSize: "0.75rem",
+              minWidth: "24px",
+              padding: "7px",
+            },
+            "& .MuiPaginationItem-previousNext": {
+              fontSize: "0.75rem",
+            },
+          },
+          "@media (max-width: 400px)": {
+            "& .MuiPaginationItem-root": {
+              fontSize: "0.7rem",
+              minWidth: "20px",
+            },
           },
         }}
       />

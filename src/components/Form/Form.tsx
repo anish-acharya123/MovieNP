@@ -25,16 +25,20 @@ type FormComponentProps<T extends FieldValues> = {
 const Form = <T extends FieldValues>({
   fields,
   onSubmit,
-  error,
+  // error,
   page,
 }: FormComponentProps<T>) => {
-  const { register, handleSubmit } = useForm<T>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<T>();
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
       className=" flex-col  flex space-y-4  "
     >
-      <h2 className="text-4xl font-medium">{page}</h2>
+      <h2 className="md:text-4xl text-2xl font-medium">{page}</h2>
       {fields.map((field) => (
         <div key={field.label} className="flex flex-col">
           <InputField
@@ -45,14 +49,14 @@ const Form = <T extends FieldValues>({
             className={field.className}
             placeholder={field.placeholder}
           />
-          {error && error[field.label] && (
+          {errors && errors[field.label] && (
             <span className="text-red-500">This field is required</span>
           )}
         </div>
       ))}
       <input
         type="submit"
-        className="text-black font-medium  bg-yellow-400 p-2 cursor-pointer"
+        className="text-black font-medium sm:text-xl text-sm  bg-yellow-400 p-2 cursor-pointer"
       />
     </form>
   );
