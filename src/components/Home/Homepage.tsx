@@ -1,5 +1,5 @@
-import ButtonComponent from "../Small/Button/ButtonComponent";
-import Heading from "../Small/Heading";
+import ButtonComponent from "../../ui/Button/ButtonComponent";
+import Heading from "../../ui/Heading";
 
 const Home = () => {
   return (

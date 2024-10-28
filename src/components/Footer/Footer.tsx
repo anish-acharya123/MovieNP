@@ -1,5 +1,5 @@
 import { FC } from "react";
-import IconComponent from "../Small/Icon/IconComponent";
+import IconComponent from "../../ui/Icon/IconComponent";
 
 const Footer: FC = () => {
   return (

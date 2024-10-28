@@ -1,5 +1,5 @@
 import LatestMovie from "../../components/latest/LatestMovie";
-import ButtonComponent from "../../components/Small/Button/ButtonComponent";
+import ButtonComponent from "../../ui/Button/ButtonComponent";
 import EachDetail from "./EachDetail";
 import { useNavigate } from "react-router-dom";
 

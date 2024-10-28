@@ -1,6 +1,4 @@
-
-
-import image from "../../../assets/detail.png";
+import image from "../../assets/detail.png";
 
 type imageProps = React.CSSProperties & {
   alt: string;

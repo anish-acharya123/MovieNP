@@ -1,9 +1,9 @@
 import { useState } from "react";
-import NavItem from "../Small/NavList/NavItem";
-import List from "../Small/List";
+import NavItem from "../../ui/NavList/NavItem";
+import List from "../../ui/List";
 import NavList from "../../constants/NavConstant";
-import ButtonComponent from "../Small/Button/ButtonComponent";
-import IconComponent from "../Small/Icon/IconComponent";
+import ButtonComponent from "../../ui/Button/ButtonComponent";
+import IconComponent from "../../ui/Icon/IconComponent";
 import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {

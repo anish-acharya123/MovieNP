@@ -3,7 +3,7 @@ import { AppDispatch } from "../../apps/Store";
 import { useAppSelector } from "../../apps/Store";
 import { useDispatch } from "react-redux";
 import { AllMoviesSeries } from "../../features/AllMoviesSlice";
-import MovieCard from "../Small/movies/MovieCard";
+import MovieCard from "../../ui/movies/MovieCard";
 import "swiper/css/bundle";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
@@ -39,7 +39,7 @@ const LatestMovie: FC = () => {
               loop={true}
               autoplay={{ delay: 2000 }}
               //   pagination={{ clickable: true }}
-                // navigation={true}
+              // navigation={true}
               breakpoints={{
                 0: {
                   slidesPerView: 2,

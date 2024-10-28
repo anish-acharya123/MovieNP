@@ -2,13 +2,13 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useAppSelector, AppDispatch } from "../../apps/Store";
-import { ImageComponent } from "../../components/Small/image/ImageComponent";
+import { ImageComponent } from "../../ui/image/ImageComponent";
 import { EachMovie } from "../../features/EachMovieSlice";
-import ButtonComponent from "../../components/Small/Button/ButtonComponent";
-import Heading from "../../components/Small/Heading";
-import List from "../../components/Small/List";
+import ButtonComponent from "../../ui/Button/ButtonComponent";
+import Heading from "../../ui/Heading";
+import List from "../../ui/List";
 import EachMovieIconList from "../../constants/Iconlist";
-import IconComponent from "../../components/Small/Icon/IconComponent";
+import IconComponent from "../../ui/Icon/IconComponent";
 
 const EachDetail = () => {
   const { id } = useParams();

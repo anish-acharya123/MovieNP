@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { useAppSelector, AppDispatch } from "../../apps/Store";
 import { AllMoviesSeries } from "../../features/AllMoviesSlice";
 import { useEffect, useState } from "react";
-import MovieCard from "../../components/Small/movies/MovieCard";
+import MovieCard from "../../ui/movies/MovieCard";
 import { Pagination } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -22,6 +22,7 @@ const Movies = () => {
 
     value: number
   ) => {
+    console.log(event);
     setPage(value);
   };
 

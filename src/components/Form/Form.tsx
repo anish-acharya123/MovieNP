@@ -5,7 +5,7 @@ import {
   Path,
   FieldValues,
 } from "react-hook-form";
-import InputField from "../Small/FormElements/InputField";
+import InputField from "../../ui/FormElements/InputField";
 
 type Field<T extends FieldValues> = {
   label: Path<T>; /// this is similar to keyof IFormValues

@@ -1,7 +1,7 @@
 import { Path, SubmitHandler } from "react-hook-form";
-import { ISignUpValues } from "../../components/Small/FormElements/types";
+import { ISignUpValues } from "../../ui/FormElements/types";
 import Form from "../../components/Form/Form";
-import FormMainGroup from "../../components/Small/FormElements/FormMainGroup";
+import FormMainGroup from "../../ui/FormElements/FormMainGroup";
 import { Link } from "react-router-dom";
 
 type Field<T> = {

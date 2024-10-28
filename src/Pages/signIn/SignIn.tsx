@@ -1,6 +1,6 @@
 import { Path, SubmitHandler } from "react-hook-form";
-import { ISignInValues } from "../../components/Small/FormElements/types";
-import FormMainGroup from "../../components/Small/FormElements/FormMainGroup";
+import { ISignInValues } from "../../ui/FormElements/types";
+import FormMainGroup from "../../ui/FormElements/FormMainGroup";
 import Form from "../../components/Form/Form";
 import { Link } from "react-router-dom";
 
