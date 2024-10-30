@@ -9,6 +9,7 @@ import DetailPage from "./Pages/DetailPage/DetailPage";
 import SignIn from "./Pages/signIn/SignIn";
 import SignUp from "./Pages/SignUp/SignUp";
 import Movies from "./Pages/Movies/Movies";
+import SearchPage from "./Pages/Search/Searchpage";
 
 function App() {
   useEffect(() => {
@@ -23,6 +24,8 @@ function App() {
           <Route path="/movies" element={<Movies />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="*" element={<SearchPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
