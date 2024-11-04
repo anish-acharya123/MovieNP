@@ -14,7 +14,7 @@ type Field<T> = {
 
 const SignUp = () => {
   const className =
-    "text-black py-2 px-3 rounded-md outline-none appearance-none	";
+    "bg-transparent border-2 py-2 px-3 rounded-md outline-none appearance-none	";
 
   const fields: Field<ISignUpValues>[] = [
     {

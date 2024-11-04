@@ -19,7 +19,6 @@ const InputField = <T extends FieldValues>({
   className,
   location,
 }: InputFieldProps<T>) => (
-  // const location = useLocation()
   <>
     {location !== "/search" && (
       <label className="sm:text-xl text-sm capitalize">{label}</label>

@@ -19,7 +19,8 @@ export default function SignIn() {
       type: "email",
       placeholder: "Email or Phone Number",
       required: true,
-      className: "text-black py-2 px-3 rounded-md outline-none appearance-none	",
+      className:
+        " bg-transparent border-2 py-2 px-3 rounded-md outline-none appearance-none	",
     },
     {
       label: "password",
@@ -27,7 +28,7 @@ export default function SignIn() {
       placeholder: "Password",
       required: true,
       className:
-        "text-blackshadow appearance-none border  rounded w-full  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ",
+        "  bg-transparent border-2 appearance-none border  rounded w-full  py-2 px-3  leading-tight focus:outline-none focus:shadow-outline ",
     },
   ];
 
