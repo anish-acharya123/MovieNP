@@ -15,7 +15,7 @@ const SearchPage = () => {
   const { movies, loading, error } = useAppSelector(
     (state) => state.movieSearch
   );
-  console.log(movies);
+  console.log(movies,loading,error);
   const {
     register,
     handleSubmit,
