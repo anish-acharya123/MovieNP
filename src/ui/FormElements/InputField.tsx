@@ -7,18 +7,23 @@ type InputFieldProps<T extends FieldValues> = {
   required?: boolean;
   type?: string;
   className?: string;
+  location?: string;
 };
 
 const InputField = <T extends FieldValues>({
   label,
-  register, 
+  register,
   required,
   type = "text",
   placeholder,
   className,
+  location,
 }: InputFieldProps<T>) => (
+  // const location = useLocation()
   <>
-    <label className="sm:text-xl text-sm capitalize">{label}</label>
+    {location !== "/search" && (
+      <label className="sm:text-xl text-sm capitalize">{label}</label>
+    )}
     <input
       placeholder={placeholder}
       type={type}

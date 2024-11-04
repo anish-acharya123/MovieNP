@@ -51,7 +51,12 @@ const SignUp = () => {
 
   return (
     <FormMainGroup>
-      <Form fields={fields} page="Sign Up" onSubmit={onSubmit} />
+      <Form
+        fields={fields}
+        page="Sign Up"
+        pClassName=" flex-col  flex space-y-4  "
+        onSubmit={onSubmit}
+      />
       <div className="flex justify-between  w-full text-sm">
         <p>
           <input type="checkbox" name="" id="" className="cursor-pointer" />

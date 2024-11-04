@@ -34,7 +34,12 @@ export default function SignIn() {
   const onSubmit: SubmitHandler<ISignInValues> = (data) => console.log(data);
   return (
     <FormMainGroup>
-      <Form fields={fields} page="Sign In" onSubmit={onSubmit} />
+      <Form
+        fields={fields}
+        page="Sign In"
+        pClassName=" flex-col  flex space-y-4  "
+        onSubmit={onSubmit}
+      />
       <div className="flex justify-between  w-full  text-sm">
         <p>
           <input type="checkbox" name="" id="" className="cursor-pointer" />

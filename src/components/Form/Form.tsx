@@ -20,12 +20,13 @@ type FormComponentProps<T extends FieldValues> = {
   onSubmit: SubmitHandler<T>;
   error?: FieldErrors<T>;
   page: string;
+  pClassName: string;
 };
 
 const Form = <T extends FieldValues>({
   fields,
   onSubmit,
-  // error,
+  pClassName,
   page,
 }: FormComponentProps<T>) => {
   const {
@@ -34,10 +35,7 @@ const Form = <T extends FieldValues>({
     formState: { errors },
   } = useForm<T>();
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className=" flex-col  flex space-y-4  "
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className={pClassName}>
       <h2 className="md:text-4xl text-2xl font-medium">{page}</h2>
       {fields.map((field) => (
         <div key={field.label} className="flex flex-col">
