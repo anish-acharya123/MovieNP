@@ -49,7 +49,7 @@ const Navbar = () => {
         <div className="md:flex items-center justify-center gap-4 flex ">
           <ButtonComponent
             icon="iconamoon:search-duotone"
-            onClick={() => console.log("/search")}
+            onClick={() => navigate("/search")}
             className="text-white  md:text-3xl text-2xl"
           />
           <ButtonComponent
