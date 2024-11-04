@@ -1,22 +1,30 @@
-// import { useAppSelector } from "../apps/Store";
-// import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import ButtonComponent from "../../ui/Button/ButtonComponent";
 import InputField from "../../ui/FormElements/InputField";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ISearchValue } from "./Index.types";
+import { useDispatch } from "react-redux";
+import { AppDispatch, useAppSelector } from "../../apps/Store";
+import { SearchMovies } from "../../features/MovieSearchSlice";
 
 const SearchPage = () => {
   const location = useLocation();
   const { pathname } = location;
 
+  const dispatch = useDispatch<AppDispatch>();
+  const { movies, loading, error } = useAppSelector(
+    (state) => state.movieSearch
+  );
+  console.log(movies);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<ISearchValue>();
 
-  const onSubmit: SubmitHandler<ISearchValue> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<ISearchValue> = (data) => {
+    dispatch(SearchMovies({ query: data.searchmovie }));
+  };
   return (
     <div className=" relative min-h-screen flex flex-col  items-center  py-40 gap-10 px-">
       <h1 className="text-4xl uppercase font-medium text-yellow-400 text-center">

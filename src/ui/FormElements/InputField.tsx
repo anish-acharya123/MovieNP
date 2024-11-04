@@ -28,6 +28,7 @@ const InputField = <T extends FieldValues>({
       type={type}
       {...register(label, { required })}
       className={className}
+      
     />
   </>
 );

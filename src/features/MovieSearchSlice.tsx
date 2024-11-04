@@ -17,7 +17,7 @@ interface fetchParams {
   query?: string;
   sortBy?: string;
   letter?: string;
-  page: number;
+  page?: number;
 }
 const apiKey = import.meta.env.VITE_APIKEY;
 const baseUrl = import.meta.env.VITE_BASE_URL;
