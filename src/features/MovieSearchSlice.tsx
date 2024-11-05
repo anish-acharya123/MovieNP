@@ -20,17 +20,17 @@ interface fetchParams {
   page?: number;
 }
 const apiKey = import.meta.env.VITE_APIKEY;
-const baseUrl = import.meta.env.VITE_BASE_URL;
+const baseUrl = import.meta.env.VITE_BASEURL;
 
 export const SearchMovies = createAsyncThunk(
   "movies/fetchMovies",
   async ({ query = "", page = 1 }: fetchParams) => {
     let url = "";
-
     if (query.length > 0) {
       url = `${baseUrl}/search/movie?api_key=${apiKey}&query=${encodeURIComponent(
         query
       )}&page=${page}`;
+      console.log(url);
     } else {
       url = `${baseUrl}/discover/movie?api_key=${apiKey}&sort_by=release_date.desc&page=${page}`;
     }
