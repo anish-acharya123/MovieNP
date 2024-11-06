@@ -1,6 +1,6 @@
 const FormMainGroup = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="relative  py-32 flex justify-center items-center ">
+    <div className="relative  pt-20 min-h-screen flex justify-center items-center ">
       <div
         data-aos="fade-up"
         data-aos-duration="1500"

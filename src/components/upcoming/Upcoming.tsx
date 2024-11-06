@@ -4,6 +4,7 @@ import { useAppSelector } from "../../apps/Store";
 import { useDispatch } from "react-redux";
 import { fetchUpcomingMovies } from "../../features/MovieUpcoming";
 import MovieCard from "../../ui/movies/MovieCard";
+import MovieCardSection from "../../Wrappers/MovieCardSection";
 
 const Upcoming: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -15,7 +16,6 @@ const Upcoming: FC = () => {
     (state) => state.movieUpcoming
   );
   const movieWithimg = movies.filter((item) => item.poster_path != null);
-  // console.log(movieWithimg);
   console.log(loading, error);
   return (
     <div className="py-16" data-aos="fade-up" data-aos-duration="2000">
@@ -26,7 +26,7 @@ const Upcoming: FC = () => {
             Upcoming Movies
           </h2>
         </div>
-        <section className="grid  lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-4">
+        <MovieCardSection>
           {movieWithimg.slice(0, 6).map((item) => (
             <MovieCard
               key={item.id}
@@ -36,7 +36,7 @@ const Upcoming: FC = () => {
               posterPath={item.poster_path}
             />
           ))}
-        </section>
+        </MovieCardSection>
       </div>
     </div>
   );

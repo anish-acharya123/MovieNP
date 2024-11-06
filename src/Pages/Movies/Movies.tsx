@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import MovieCard from "../../ui/movies/MovieCard";
 import { Pagination } from "@mui/material";
 import { Link } from "react-router-dom";
+import MovieCardSection from "../../Wrappers/MovieCardSection";
+import SkeletonRec from "../../components/skeleton";
 
 const Movies = () => {
   const [page, setPage] = useState(1);
@@ -27,9 +29,8 @@ const Movies = () => {
   };
 
   return (
-    // <Box>
     <div
-      className="pt-32 pb-20 relative"
+      className="md:pt-40 pt-28 pb-20 relative space-y-10"
       data-aos="fade-up"
       data-aos-duration="1500"
     >
@@ -45,17 +46,23 @@ const Movies = () => {
           'S LISTS
         </h2>
       </div>
-      <section className="grid  lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 sm:gap-4">
-        {movies.map((item) => (
-          <MovieCard
-            key={item.id}
-            title={item.title}
-            id={item.id}
-            releaseDate={item.release_date}
-            posterPath={item.poster_path}
-          />
-        ))}
-      </section>
+      <MovieCardSection>
+        {loading ? (
+          <SkeletonRec />
+        ) : (
+          <>
+            {movies.map((item) => (
+              <MovieCard
+                key={item.id}
+                title={item.title}
+                id={item.id}
+                releaseDate={item.release_date}
+                posterPath={item.poster_path}
+              />
+            ))}
+          </>
+        )}
+      </MovieCardSection>
       <Pagination
         count={totalPages}
         page={page}

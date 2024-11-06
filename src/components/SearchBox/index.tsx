@@ -21,7 +21,11 @@ const SearchBox = () => {
     dispatch(SearchMovies({ query: data.searchmovie }));
   };
   return (
-    <div className=" flex justify-center items-center flex-col">
+    <div
+      className=" flex justify-center items-center flex-col"
+      data-aos="fade-up"
+      data-aos-duration="1500"
+    >
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="space-x-10 flex items-center bg- border-2  rounded-full  px-4 py-2 sm:w-4/6 bg-[rgba(0,0,0,0.2)] backdrop-blur-xl"

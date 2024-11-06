@@ -18,7 +18,11 @@ const MovieCard: React.FC<MovieCardProps> = ({
 }) => {
   const navigate = useNavigate();
   return (
-    <div className=" w-fit flex flex-col gap-2 border- p-2 border-yellow-400 cursor-pointer">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="2000"
+      className=" w-fit flex flex-col gap-2 border- p-2 border-yellow-400 cursor-pointer"
+    >
       <div onClick={() => navigate(`/detailpage/${id}`)}>
         <ImageComponent
           alt={title || "movie"}
