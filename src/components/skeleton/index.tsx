@@ -14,11 +14,11 @@ const SkeletonRec = () => {
            
               width: "100%",
               height: {
-                xs: "16rem", // Height for extra-small screens
-                sm: "18rem", // Height for small screens
-                md: "20rem", // Height for medium screens
-                lg: "22rem", // Height for large screens
-                xl: "24rem", // Height for extra-large screens
+                xs: "16rem", 
+                sm: "18rem", 
+                md: "20rem", 
+                lg: "22rem", 
+                xl: "24rem", 
               },
             }}
           />
