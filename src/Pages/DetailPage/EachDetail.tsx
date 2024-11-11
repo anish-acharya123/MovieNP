@@ -16,8 +16,6 @@ const EachDetail = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { movie, loading, error } = useAppSelector((state) => state.eachmovie);
 
-  const [newImage, setNewImage] = useState<string>("");
-
   if (movie.poster_path) {
     dispatch(
       changeImage(`https://image.tmdb.org/t/p/w500${movie.poster_path}`)
@@ -44,7 +42,7 @@ const EachDetail = () => {
         <Heading
           textfirst={movie.title}
           highlightText=""
-          className="lg:text-7xl  sm:text-5xl  text-4xl"
+          className="lg:text-7xl  sm:text-5xl  text-4xl md:text-start text-center"
         />
         <div className="flex sm:gap-10 gap-4  items-center md:text-[16px] text-sm">
           <p className="bg-white text-black px-2 text-center">Movies</p>
