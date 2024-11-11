@@ -22,7 +22,7 @@ const SearchPage = () => {
       <section>
         <MovieCardSection>
           {loading ? (
-            <SkeletonRec />
+            <SkeletonRec count={12} />
           ) : (
             <>
               {movies.map((item) => (

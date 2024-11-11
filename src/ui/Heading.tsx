@@ -1,4 +1,3 @@
-
 type HeadingProps = {
   textfirst: string;
   textsecond?: string;
@@ -10,13 +9,13 @@ const Heading = ({
   textfirst,
   textsecond,
   highlightText,
-  className,
+  className = "",
 }: HeadingProps) => {
   return (
-    <h1 className={` leading-[120%] ${className}`}>
+    <h1 className={`leading-tight ${className}`}>
       {textfirst}{" "}
       {highlightText && (
-        <span className="text-yellow-400">{highlightText}</span>
+        <span className="text-yellow-400 font-semibold">{highlightText}</span>
       )}{" "}
       <br /> {textsecond}
     </h1>

@@ -48,7 +48,7 @@ const Movies = () => {
       </div>
       <MovieCardSection>
         {loading ? (
-          <SkeletonRec />
+          <SkeletonRec count={12} />
         ) : (
           <>
             {movies.map((item) => (

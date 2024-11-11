@@ -1,24 +1,23 @@
 import { Skeleton } from "@mui/material";
 
-const SkeletonRec = () => {
+const SkeletonRec = ({ count }: { count: number }) => {
   const css = { borderRadius: "2px", bgcolor: "grey.300" };
 
   return (
     <>
-      {Array(12).fill(
-        <div className="flex flex-col mb-4">
+      {Array.from({ length: count }, (_, index) => (
+        <div key={index} className="flex flex-col mb-4">
           <Skeleton
             variant="rectangular"
             sx={{
               ...css,
-           
               width: "100%",
               height: {
-                xs: "16rem", 
-                sm: "18rem", 
-                md: "20rem", 
-                lg: "22rem", 
-                xl: "24rem", 
+                xs: "16rem",
+                sm: "18rem",
+                md: "20rem",
+                lg: "22rem",
+                xl: "24rem",
               },
             }}
           />
@@ -51,7 +50,7 @@ const SkeletonRec = () => {
             />
           </div>
         </div>
-      )}
+      ))}
     </>
   );
 };
