@@ -3,6 +3,7 @@ import MovieSearch from "../features/MovieSearchSlice";
 import MovieUpcoming from "../features/MovieUpcoming";
 import AllMovies from "../features/AllMoviesSlice";
 import EachMovie from "../features/EachMovieSlice";
+import ImageReducer from "../features/BgImageSlice";
 import { TypedUseSelectorHook, useSelector } from "react-redux";
 
 export const store = configureStore({
@@ -11,6 +12,7 @@ export const store = configureStore({
     movieUpcoming: MovieUpcoming,
     allmovies: AllMovies,
     eachmovie: EachMovie,
+    image: ImageReducer,
   },
 });
 

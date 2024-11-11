@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useAppSelector, AppDispatch } from "../../apps/Store";
@@ -9,11 +9,20 @@ import Heading from "../../ui/Heading";
 import List from "../../ui/List";
 import EachMovieIconList from "../../constants/Iconlist";
 import IconComponent from "../../ui/Icon/IconComponent";
+import { changeImage } from "../../features/BgImageSlice";
 
 const EachDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch<AppDispatch>();
   const { movie, loading, error } = useAppSelector((state) => state.eachmovie);
+
+  const [newImage, setNewImage] = useState<string>("");
+
+  if (movie.poster_path) {
+    dispatch(
+      changeImage(`https://image.tmdb.org/t/p/w500${movie.poster_path}`)
+    );
+  }
 
   useEffect(() => {
     dispatch(EachMovie(parseInt(id ?? "1034541")));

@@ -1,13 +1,15 @@
 import Navbar from "../components/Navbar/Navbar";
-import image from "../assets/homeimg.png";
 import Footer from "../components/Footer/Footer";
+import { useAppSelector } from "../apps/Store";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
+  const currentImage = useAppSelector(state=>state.image.src)
+
   return (
     <main className="">
       <div
         className="absolute inset-0 bg-cover bg-center  bg-scroll opacity-30 w-full h-full"
-        style={{ backgroundImage: `url(${image})` }}
+        style={{ backgroundImage: `url(${currentImage})` }}
       ></div>
       <div className="max-w-[1770px]   mx-auto text-white">
         <Navbar />
