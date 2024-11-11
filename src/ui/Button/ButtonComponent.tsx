@@ -9,7 +9,7 @@ type ButtonProps = React.CSSProperties & {
 
 const ButtonComponent = ({ label, onClick, icon, className }: ButtonProps) => {
   return (
-    <button className={className} onClick={onClick}>
+    <button className={className} onClick={onClick} >
       {icon && <Icon icon={icon} />}
       <p>{label}</p>
     </button>

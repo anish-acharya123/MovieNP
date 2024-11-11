@@ -23,11 +23,12 @@ const Companylist: FC = () => {
             style={{
               display: loadedImages.includes(item.id) ? "block" : "none",
             }}
+            // className="aspect-w-16 aspect-h-9"
           >
             <img
               src={item.img}
               alt=""
-              className="md:h-[15rem] md:w-full h-[10rem]"
+              className="md:h-[15rem] md:w-full h-[10rem] "
               onLoad={() => handleImageLoad(item.id)}
             />
           </figure>

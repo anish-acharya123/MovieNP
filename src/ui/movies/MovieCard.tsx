@@ -40,7 +40,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
         </div>
       )}
       {title && releaseDate && (
-        <ul>
+        <div>
           <IconComponent
             parentClass="flex justify-between flex-row-reverse"
             labelFirstClass="border-2 px-1 w-fit md:text-sm text-[0.7rem]"
@@ -49,7 +49,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
             iconClass="inline sm:text-xl text-sm text-yellow-400"
             iconText={(Math.random() * 10).toFixed()}
           />
-        </ul>
+        </div>
       )}
     </div>
   );
