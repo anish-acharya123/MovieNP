@@ -4,10 +4,12 @@ import { useAppSelector } from "../../apps/Store";
 import { useDispatch } from "react-redux";
 import { AllMoviesSeries } from "../../features/AllMoviesSlice";
 import MovieCard from "../../ui/movies/MovieCard";
-import "swiper/css/bundle";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import SwiperCore from "swiper";
+import "swiper/css/bundle";
+import { SkeletonBanner } from "../skeleton";
+import MovieCardSection from "../../Wrappers/MovieCardSection";
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const LatestMovie: FC = () => {
@@ -21,7 +23,6 @@ const LatestMovie: FC = () => {
   const movieWithimg = movies.filter((item) => item.poster_path != null);
 
   console.log(loading, error);
-  // console.log(movieWithimg);
   return (
     <div className="pt-12 pb-8">
       <div className="flex flex-col gap-4">
@@ -38,8 +39,6 @@ const LatestMovie: FC = () => {
               spaceBetween={20}
               loop={true}
               autoplay={{ delay: 2000 }}
-              //   pagination={{ clickable: true }}
-              // navigation={true}
               breakpoints={{
                 0: {
                   slidesPerView: 2,
@@ -63,11 +62,19 @@ const LatestMovie: FC = () => {
                 },
               }}
             >
-              {movieWithimg.map((movie, index) => (
-                <SwiperSlide key={index}>
-                  <MovieCard id={movie.id} posterPath={movie.poster_path} />
-                </SwiperSlide>
-              ))}
+              {loading ? (
+                <MovieCardSection>
+                  <SkeletonBanner count={6} />
+                </MovieCardSection>
+              ) : (
+                <>
+                  {movieWithimg.map((movie, index) => (
+                    <SwiperSlide key={index}>
+                      <MovieCard id={movie.id} posterPath={movie.poster_path} />
+                    </SwiperSlide>
+                  ))}
+                </>
+              )}
             </Swiper>
           </div>
         </section>

@@ -1,6 +1,6 @@
 import { useAppSelector } from "../../apps/Store";
 import SearchBox from "../../components/SearchBox";
-import SkeletonRec from "../../components/skeleton";
+import { SkeletonRec } from "../../components/skeleton";
 import MovieCard from "../../ui/movies/MovieCard";
 import MovieCardSection from "../../Wrappers/MovieCardSection";
 

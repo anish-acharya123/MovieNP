@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { fetchUpcomingMovies } from "../../features/MovieUpcoming";
 import MovieCard from "../../ui/movies/MovieCard";
 import MovieCardSection from "../../Wrappers/MovieCardSection";
+import { SkeletonRec } from "../skeleton";
 
 const Upcoming: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -27,15 +28,21 @@ const Upcoming: FC = () => {
           </h2>
         </div>
         <MovieCardSection>
-          {movieWithimg.slice(0, 6).map((item) => (
-            <MovieCard
-              key={item.id}
-              title={item.title}
-              id={item.id}
-              releaseDate={item.release_date}
-              posterPath={item.poster_path}
-            />
-          ))}
+          {loading ? (
+            <SkeletonRec count={6} />
+          ) : (
+            <>
+              {movieWithimg.slice(0, 6).map((item) => (
+                <MovieCard
+                  key={item.id}
+                  title={item.title}
+                  id={item.id}
+                  releaseDate={item.release_date}
+                  posterPath={item.poster_path}
+                />
+              ))}
+            </>
+          )}
         </MovieCardSection>
       </div>
     </div>

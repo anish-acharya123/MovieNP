@@ -6,7 +6,7 @@ import MovieCard from "../../ui/movies/MovieCard";
 import { Pagination } from "@mui/material";
 import { Link } from "react-router-dom";
 import MovieCardSection from "../../Wrappers/MovieCardSection";
-import SkeletonRec from "../../components/skeleton";
+import {SkeletonRec} from "../../components/skeleton";
 
 const Movies = () => {
   const [page, setPage] = useState(1);

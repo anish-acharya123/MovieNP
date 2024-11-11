@@ -23,6 +23,7 @@ export const fetchUpcomingMovies = createAsyncThunk(
       `${baseUrl}/movie/upcoming?api_key=${apiKey}&sort_by=release_date.desc&page=1`
     );
     // console.log(response.data.results);
+    await new Promise((resolve) => setTimeout(resolve, 3000));
     return response.data.results;
   }
 );

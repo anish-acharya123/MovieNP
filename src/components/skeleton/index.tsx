@@ -1,8 +1,8 @@
 import { Skeleton } from "@mui/material";
 
+const css = { borderRadius: "2px", bgcolor: "grey.300" };
 const SkeletonRec = ({ count }: { count: number }) => {
-  const css = { borderRadius: "2px", bgcolor: "grey.300" };
-  console.log(count , "skeleton");
+  console.log(count, "skeleton");
   return (
     <>
       {Array.from({ length: count }, (_, index) => (
@@ -55,4 +55,48 @@ const SkeletonRec = ({ count }: { count: number }) => {
   );
 };
 
-export default SkeletonRec;
+const SkeletonBanner = ({ count }: { count: number }) => {
+  return (
+    <>
+      {Array.from({ length: count }, (_, index) => (
+        <div key={index} className="flex flex-col mb-4">
+          <Skeleton
+            variant="rectangular"
+            sx={{
+              ...css,
+              width: "100%",
+              height: {
+                xs: "16rem",
+                sm: "18rem",
+                md: "20rem",
+                lg: "22rem",
+                xl: "24rem",
+              },
+            }}
+          />
+        </div>
+      ))}
+    </>
+  );
+};
+
+const SkeletonCompany = ({ count }: { count: number }) => {
+  return (
+    <>
+      {Array.from({ length: count }, (_, index) => (
+        <div key={index} className="flex flex-col mb-4">
+          <Skeleton
+            variant="rectangular"
+            sx={{
+              ...css,
+              width: "100%",
+              height: "14rem",
+            }}
+          />
+        </div>
+      ))}
+    </>
+  );
+};
+
+export { SkeletonRec, SkeletonBanner, SkeletonCompany };
