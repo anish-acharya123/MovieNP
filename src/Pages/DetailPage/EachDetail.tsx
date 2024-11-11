@@ -27,7 +27,15 @@ const EachDetail = () => {
   }, [id]);
 
   console.log(movie, loading, error);
-  console.log(movie.title);
+
+  useEffect(() => {
+    const previousTitle = document.title;
+    document.title = movie.title;
+    return () => {
+      document.title = previousTitle;
+    };
+  }, [movie.title]);
+
   return (
     <div className="flex items-center sm:flex-row flex-col bg-gray- lg:gap-28 md:gap-20 gap-4 pt-10">
       <ImageComponent
