@@ -2,7 +2,7 @@ import { Skeleton } from "@mui/material";
 
 const SkeletonRec = ({ count }: { count: number }) => {
   const css = { borderRadius: "2px", bgcolor: "grey.300" };
-
+  console.log(count , "skeleton");
   return (
     <>
       {Array.from({ length: count }, (_, index) => (

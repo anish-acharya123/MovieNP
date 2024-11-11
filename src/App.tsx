@@ -16,17 +16,24 @@ function App() {
   useEffect(() => {
     AOS.init();
   }, []);
+
+  const routes = [
+    { path: "/", element: <Landingpage /> },
+    { path: "/detailpage/:id", element: <DetailPage /> },
+    { path: "/movies", element: <Movies /> },
+    { path: "/signup", element: <SignUp /> },
+    { path: "/signin", element: <SignIn /> },
+    { path: "/search", element: <SearchPage /> },
+    { path: "*", element: <NotFound /> },
+  ];
+
   return (
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/" element={<Landingpage />} />
-          <Route path="/detailpage/:id" element={<DetailPage />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="*" element={<NotFound />} />
+          {routes.map((route) => {
+            return <Route path={route.path} element={route.element} />;
+          })}
         </Routes>
       </Layout>
     </BrowserRouter>

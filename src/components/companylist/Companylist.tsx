@@ -1,12 +1,12 @@
 import { FC, useState } from "react";
 import CompanyList from "../../constants/Companylist";
-import SkeletonRec from "../skeleton/index";
+// import SkeletonRec from "../skeleton/index";
 
 const Companylist: FC = () => {
   const [loadedImages, setLoadedImages] = useState<number[]>([]);
 
   const handleImageLoad = async (id: number) => {
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     setLoadedImages((prev) => [...prev, id]);
   };
 
@@ -18,12 +18,11 @@ const Companylist: FC = () => {
           data-aos="fade-right"
           data-aos-duration={item.duration}
         >
-          {!loadedImages.includes(item.id) && <SkeletonRec count={4} />}
+          {/* {!loadedImages.includes(item.id) && <SkeletonRec count={4} />} */}
           <figure
             style={{
               display: loadedImages.includes(item.id) ? "block" : "none",
             }}
-            // className="aspect-w-16 aspect-h-9"
           >
             <img
               src={item.img}

@@ -9,7 +9,7 @@ const SearchPage = () => {
     (state) => state.movieSearch
   );
 
-  console.log(movies, loading, error);
+  console.log(error);
 
   return (
     <div className=" relative min-h-screen  pt-32 pb-20 space-y-6 px-">
