@@ -20,3 +20,15 @@ MovieNP is a movie discovery website where users can explore a range of movies, 
 - [Folder Structure](#folderstructure)
 - [Contributing](#contributing)
 - [Contact](#contact)
+
+### Features
+- **Browse Popular Movies**: Display a wide range of movies, organized by categories.
+- **Dynamic Search & Filters**: Search movies by title, genre, and more.
+- **Responsive UI**: Fully responsive design optimized for both desktop and mobile devices.
+- **Pagination**: Navigate through pages seamlessly.
+- **Movie Detail Page**: View detailed information for each movie, including cast, overview, and rating.
+
+
+
+
+
