@@ -1,8 +1,8 @@
 import { lazy } from "react";
 import ButtonComponent from "../../ui/Button/ButtonComponent";
-// import Heading from "../../ui/Heading";
+import Heading from "../../ui/Heading";
 
-const Head = lazy(() => import("../../ui/Heading"));
+// const Head = lazy(() => import("../../ui/Heading"));
 const Home = () => {
   return (
     <div className="relative  flex lg:py-80 md:pt-52 pt-32 justify-center items-center w-full    ">
@@ -11,7 +11,7 @@ const Home = () => {
         data-aos-duration="1500"
         className="flex-1  flex flex-col gap-4    translate"
       >
-        <Head
+        <Heading
           textfirst="Unlimited"
           highlightText="Entertainment,"
           textsecond="Movies, TVs Shows, & More."

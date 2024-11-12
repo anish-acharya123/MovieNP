@@ -6,15 +6,18 @@ import MovieCard from "../../ui/movies/MovieCard";
 import { Pagination } from "@mui/material";
 import { Link } from "react-router-dom";
 import MovieCardSection from "../../Wrappers/MovieCardSection";
-import {SkeletonRec} from "../../components/skeleton";
+import { SkeletonRec } from "../../components/skeleton";
+import { ScrollToTop } from "../../utils/scrollUtils";
 
 const Movies = () => {
   const [page, setPage] = useState(1);
   const totalPages = 10;
   const dispatch = useDispatch<AppDispatch>();
   const { movies, loading, error } = useAppSelector((state) => state.allmovies);
+  ScrollToTop();
   useEffect(() => {
     dispatch(AllMoviesSeries(page));
+    ScrollToTop();
   }, [page]);
 
   console.log(loading, error);

@@ -16,11 +16,13 @@ const EachDetail = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { movie, loading, error } = useAppSelector((state) => state.eachmovie);
 
-  if (movie.poster_path) {
-    dispatch(
-      changeImage(`https://image.tmdb.org/t/p/w500${movie.poster_path}`)
-    );
-  }
+  useEffect(() => {
+    if (movie.poster_path) {
+      dispatch(
+        changeImage(`https://image.tmdb.org/t/p/w500${movie.poster_path}`)
+      );
+    }
+  }, [movie.poster_path]);
 
   useEffect(() => {
     dispatch(EachMovie(parseInt(id ?? "1034541")));

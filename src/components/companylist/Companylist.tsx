@@ -3,7 +3,6 @@ import CompanyList from "../../constants/Companylist";
 import { SkeletonCompany } from "../skeleton";
 
 const Companylist: FC = () => {
-  // await new Promise((resolve) => setTimeout(resolve, 3000));
 
   return (
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">

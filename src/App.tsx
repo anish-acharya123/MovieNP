@@ -32,7 +32,13 @@ function App() {
       <Layout>
         <Routes>
           {routes.map((route) => {
-            return <Route path={route.path} element={route.element} />;
+            return (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={route.element}
+              />
+            );
           })}
         </Routes>
       </Layout>
