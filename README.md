@@ -7,7 +7,16 @@ MovieNP is a movie discovery website where users can explore a range of movies, 
 ## Screenshots
 
 ![Homepage]![alt text](/src/assets/image.png)
-![UpcomingMovies]![alt text](/src/assets/image-1.png)
 ![DetailPage]![alt text](/src/assets/image-2.png)
 ![SearchPage]![alt text](/src/assets/image-3.png)
 
+## Table of Content
+
+- [Features](#features)
+- [Live Demo](#livedemo)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies Used](#technologies)
+- [Folder Structure](#folderstructure)
+- [Contributing](#contributing)
+- [Contact](#contact)
