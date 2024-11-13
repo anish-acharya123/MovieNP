@@ -79,10 +79,10 @@ const Movies = () => {
           "& .MuiPaginationItem-root": {
             color: "white",
             border: "2px solid yellow",
-          },
-          "& .Mui-selected": {
-            backgroundColor: "yellow",
-            color: "black",
+            "&.Mui-selected": {
+              backgroundColor: "yellow !important",
+              color: "black !important",
+            },
           },
           "@media (max-width: 600px)": {
             "& .MuiPaginationItem-root": {
@@ -93,19 +93,11 @@ const Movies = () => {
             "& .MuiPaginationItem-previousNext": {
               fontSize: "0.75rem",
             },
-            "& .Mui-selected": {
-              backgroundColor: "yellow",
-              color: "white",
-            },
           },
           "@media (max-width: 400px)": {
             "& .MuiPaginationItem-root": {
               fontSize: "0.7rem",
               minWidth: "20px",
-            },
-            "& .Mui-selected": {
-              backgroundColor: "yellow",
-              color: "white",
             },
           },
         }}
