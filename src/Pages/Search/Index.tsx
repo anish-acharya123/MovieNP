@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useAppSelector } from "../../apps/Store";
 import SearchBox from "../../components/SearchBox";
 import { SkeletonRec } from "../../components/skeleton";
@@ -5,6 +6,7 @@ import MovieCard from "../../ui/movies/MovieCard";
 import MovieCardSection from "../../Wrappers/MovieCardSection";
 
 const SearchPage = () => {
+  const [search, setSearch] = useState<string>();
   const { movies, loading, error } = useAppSelector(
     (state) => state.movieSearch
   );
@@ -17,7 +19,14 @@ const SearchPage = () => {
         Search Your Favourite
       </h1>
       <section className="flex flex-col ">
-        <SearchBox />
+        <SearchBox setSearch={setSearch} />
+      </section>
+      <section>
+        {search && (
+          <p className="text-2xl">
+            Results for <span className="text-yellow-400 uppercase">{search}</span>
+          </p>
+        )}
       </section>
       <section>
         <MovieCardSection>

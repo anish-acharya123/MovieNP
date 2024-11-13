@@ -7,7 +7,10 @@ import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../apps/Store";
 import { SearchMovies } from "../../features/MovieSearchSlice";
 
-const SearchBox = () => {
+type seachProps = {
+  setSearch: React.Dispatch<React.SetStateAction<string | undefined>>;
+};
+const SearchBox = ({ setSearch }: seachProps) => {
   const location = useLocation();
   const { pathname } = location;
   const dispatch = useDispatch<AppDispatch>();
@@ -18,6 +21,7 @@ const SearchBox = () => {
   } = useForm<ISearchValue>();
 
   const onSubmit: SubmitHandler<ISearchValue> = (data) => {
+    setSearch(data.searchmovie);
     dispatch(SearchMovies({ query: data.searchmovie }));
   };
   return (
