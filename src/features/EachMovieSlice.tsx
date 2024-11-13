@@ -22,7 +22,6 @@ export const EachMovie = createAsyncThunk(
     const response = await axios.get(
       `${baseUrl}/movie/${id}?api_key=${apiKey}&append_to_response=credits,videos,images`
     );
-    console.log("anish")
     return response.data;
   }
 );
