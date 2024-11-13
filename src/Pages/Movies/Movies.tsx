@@ -79,13 +79,12 @@ const Movies = () => {
           marginTop: 2,
           "& .MuiPaginationItem-root": {
             color: "white",
-            border: "2px solid white",
+            border: "2px solid yellow",
           },
           "& .Mui-selected": {
             backgroundColor: "yellow",
             color: "black",
           },
-          // Responsive styles
           "@media (max-width: 600px)": {
             "& .MuiPaginationItem-root": {
               fontSize: "0.75rem",
@@ -105,7 +104,6 @@ const Movies = () => {
         }}
       />
     </div>
-    // {/* </Box> */}
   );
 };
 
