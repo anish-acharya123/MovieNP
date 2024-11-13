@@ -30,7 +30,6 @@ export const SearchMovies = createAsyncThunk(
       url = `${baseUrl}/search/movie?api_key=${apiKey}&query=${encodeURIComponent(
         query
       )}&page=${page}`;
-      console.log(url);
     } else {
       url = `${baseUrl}/discover/movie?api_key=${apiKey}&sort_by=release_date.desc&page=${page}`;
     }
