@@ -1,8 +1,6 @@
-import { lazy } from "react";
 import ButtonComponent from "../../ui/Button/ButtonComponent";
 import Heading from "../../ui/Heading";
 
-// const Head = lazy(() => import("../../ui/Heading"));
 const Home = () => {
   return (
     <div className="relative  flex lg:py-80 md:pt-52 pt-32 justify-center items-center w-full    ">

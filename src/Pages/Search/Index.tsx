@@ -4,6 +4,7 @@ import SearchBox from "../../components/SearchBox";
 import { SkeletonRec } from "../../components/skeleton";
 import MovieCard from "../../ui/movies/MovieCard";
 import MovieCardSection from "../../Wrappers/MovieCardSection";
+import NoResultFound from "../../components/NoresultSearch";
 
 const SearchPage = () => {
   const [search, setSearch] = useState<string>();
@@ -24,28 +25,33 @@ const SearchPage = () => {
       <section>
         {search && (
           <p className="text-2xl">
-            Results for <span className="text-yellow-400 uppercase">{search}</span>
+            Results for{" "}
+            <span className="text-yellow-400 uppercase">{search}</span>
           </p>
         )}
       </section>
       <section>
-        <MovieCardSection>
-          {loading ? (
+        {loading ? (
+          <MovieCardSection>
             <SkeletonRec count={12} />
-          ) : (
-            <>
-              {movies.map((item) => (
-                <MovieCard
-                  key={item.id}
-                  title={item.title}
-                  id={item.id}
-                  releaseDate={item.release_date}
-                  posterPath={item.poster_path}
-                />
-              ))}
-            </>
-          )}
-        </MovieCardSection>
+          </MovieCardSection>
+        ) : movies.length > 0 ? (
+          <MovieCardSection>
+            {movies.map((item) => (
+              <MovieCard
+                key={item.id}
+                title={item.title}
+                id={item.id}
+                releaseDate={item.release_date}
+                posterPath={item.poster_path}
+              />
+            ))}
+          </MovieCardSection>
+        ) : (
+          <>
+            <NoResultFound search={search} />
+          </>
+        )}
       </section>
     </div>
   );
