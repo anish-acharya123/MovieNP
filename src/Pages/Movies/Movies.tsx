@@ -70,7 +70,6 @@ const Movies = () => {
         count={totalPages}
         page={page}
         onChange={handlePageChange}
-        color="primary"
         variant="outlined"
         shape="rounded"
         sx={{
@@ -94,11 +93,19 @@ const Movies = () => {
             "& .MuiPaginationItem-previousNext": {
               fontSize: "0.75rem",
             },
+            "& .Mui-selected": {
+              backgroundColor: "yellow",
+              color: "white",
+            },
           },
           "@media (max-width: 400px)": {
             "& .MuiPaginationItem-root": {
               fontSize: "0.7rem",
               minWidth: "20px",
+            },
+            "& .Mui-selected": {
+              backgroundColor: "yellow",
+              color: "white",
             },
           },
         }}

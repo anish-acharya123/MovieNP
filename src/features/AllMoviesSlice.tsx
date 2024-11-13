@@ -22,7 +22,6 @@ export const AllMoviesSeries = createAsyncThunk(
     const response = await axios.get(
       `${baseUrl}/discover/movie?api_key=${apiKey}&sort_by=release_date.desc&page=${pageNumber}`
     );
-    // await new Promise((resolve) => setTimeout(resolve, 3000));
     return response.data.results;
   }
 );

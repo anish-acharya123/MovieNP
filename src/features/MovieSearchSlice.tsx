@@ -37,7 +37,6 @@ export const SearchMovies = createAsyncThunk(
 
     const response = await axios.get(url);
 
-    // await new Promise((resolve) => setTimeout(resolve, 3000));
     return response.data.results;
   }
 );

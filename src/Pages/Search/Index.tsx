@@ -24,7 +24,7 @@ const SearchPage = () => {
       </section>
       <section>
         {search && (
-          <p className="text-2xl">
+          <p className="md:text-2xl">
             Results for{" "}
             <span className="text-yellow-400 uppercase">{search}</span>
           </p>
@@ -48,9 +48,7 @@ const SearchPage = () => {
             ))}
           </MovieCardSection>
         ) : (
-          <>
-            <NoResultFound search={search} />
-          </>
+          <>{search && <NoResultFound search={search} />}</>
         )}
       </section>
     </div>
