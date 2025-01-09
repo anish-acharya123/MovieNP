@@ -1,18 +1,22 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import ButtonComponent from "../../ui/Button/ButtonComponent";
 import InputField from "../../ui/FormElements/InputField";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ISearchValue } from "../../Pages/Search/Index.types";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../apps/Store";
 import { SearchMovies } from "../../features/MovieSearchSlice";
+import { useEffect } from "react";
 
 type seachProps = {
   setSearch: React.Dispatch<React.SetStateAction<string | undefined>>;
 };
 const SearchBox = ({ setSearch }: seachProps) => {
+  const navigation = useNavigate();
   const location = useLocation();
   const { pathname } = location;
+  const queryParams = new URLSearchParams(location.search);
+  const searchMovie = queryParams.get("query") || "";
   const dispatch = useDispatch<AppDispatch>();
   const {
     register,
@@ -20,9 +24,15 @@ const SearchBox = ({ setSearch }: seachProps) => {
     formState: { errors },
   } = useForm<ISearchValue>();
 
+  useEffect(() => {
+    if (searchMovie) {
+      dispatch(SearchMovies({ query: searchMovie }));
+      setSearch(searchMovie);
+    }
+  }, [searchMovie]);
+
   const onSubmit: SubmitHandler<ISearchValue> = (data) => {
-    setSearch(data.searchmovie);
-    dispatch(SearchMovies({ query: data.searchmovie }));
+    navigation(`/search?query=${data.searchmovie}`);
   };
   return (
     <div
@@ -46,7 +56,7 @@ const SearchBox = ({ setSearch }: seachProps) => {
 
         <ButtonComponent
           icon="iconamoon:search-duotone"
-          className="  md:text-3xl text-2xl"
+          className="  md:text-3xl text-2xl "
         />
       </form>
       {errors && errors["searchmovie"] && (
