@@ -1,16 +1,22 @@
 import { useDispatch } from "react-redux";
 import { useAppSelector, AppDispatch } from "../../apps/Store";
 import { AllMoviesSeries } from "../../features/AllMoviesSlice";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import MovieCard from "../../ui/movies/MovieCard";
 import { Pagination } from "@mui/material";
 import { Link } from "react-router-dom";
 import MovieCardSection from "../../Wrappers/MovieCardSection";
 import { SkeletonRec } from "../../components/skeleton";
 import { ScrollToTop } from "../../utils/scrollUtils";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Movies = () => {
-  const [page, setPage] = useState(1);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const queryParams = new URLSearchParams(location.search);
+  const page = parseInt(queryParams.get("page") || "1");
+
   const totalPages = 10;
   const dispatch = useDispatch<AppDispatch>();
   const { movies, loading, error } = useAppSelector((state) => state.allmovies);
@@ -28,7 +34,7 @@ const Movies = () => {
     value: number
   ) => {
     console.log(event);
-    setPage(value);
+    navigate(`/movies?page=${value}`);
   };
 
   return (
